@@ -45,48 +45,48 @@ const AboutPage = () => {
     {
       name: "ESHAN DANANJAYA",
       role: "Team Leader & Associate Software Engineer",
-      experience: "Leadership and Full-stack development",
+      experience: "Leadership and Full-stack Development",
       image: "/images/eshan.jpg"
     },
     {
       name: "JANITHA SANDARUWAN",
       role: "Software Engineer",
-      experience: "Expert in software development",
+      experience: "Expert in Software Development",
       image: "/images/Janitha.jpg"
     },
    
     {
       name: "UDARI PIYUMIKA",
       role: "Software Engineer Leader",
-      experience: "Technical leadership and development",
+      experience: "Technical Leadership and Development",
       image: "/images/Udari - SE.jpg"
     },
     {
       name: "THULAKSHI RUCHINI",
       role: "Project Manager",
-      experience: "Project management and delivery",
+      experience: "Project Management and Delivery",
       image: "/images/Ruchini - PM.png"
     },
     {
       name: "THUSHARA GUNAWARDHANE",
       role: "Software Engineer",
-      experience: "Full-stack development expertise",
+      experience: "Full-stack Development Expertise",
       image: "/images/Thushara-Software Engineer.jpg"
     },
     {
       name: "SHALITHA GAMAGE",
       role: "System & Security Engineer",
-      experience: "Security and system administration",
+      experience: "Security and System Administration",
       image: "/images/Shalitha.jpg"
     },
     {
-      name: "ISURU WEERAKOON",
+      name: "ISURU BANDARA",
       role: "Software Engineer",
-      experience: "Software development and testing",
-      image: "/images/Isuru-SE.jpg"
+      experience: "Full-stack Development and Testing",
+      image: "/images/Isuru-SE.png"
     },
     {
-      name: "Thilini",
+      name: "THILINI",
       role: "Customer Coordinator ",
       experience: " Customer Coordinator ",
       image: "/images/Thilini-Customer Coordinator.jpg"
@@ -96,7 +96,19 @@ const AboutPage = () => {
       role: "Digital Marketing Agent",
       experience: "Digital Marketing Agent",
       image: "/images/Azeem - Digital Marketing Agent.jpg"
-    }
+    },
+     {
+      name: "BANUKA",
+      role: "Intern Software Engineer",
+      experience: "Full-stack Development and Testing",
+      image: "/images/Bhanuka-SE.jpg"
+    },
+     {
+      name: "JUDE",
+      role: "ML Engineer",
+      experience: "Machine Learning and Data Analysis",
+      image: "/images/Jude - ML Engineer.jpg"
+    },
   ];
 
   return (

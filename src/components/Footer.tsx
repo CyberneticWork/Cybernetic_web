@@ -25,8 +25,8 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Globe className="w-4 h-4" />
-                <a href="https://www.cybernetic.com" className="text-sm hover:underline">
-                  www.cybernetic.com
+                <a href="https://www.cybernetic.lk" className="text-sm hover:underline">
+                  www.cybernetic.lk
                 </a>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">

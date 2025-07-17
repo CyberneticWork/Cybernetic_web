@@ -56,13 +56,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      value: "+94 11 2345678",
-      description: "Mon-Fri from 8am to 5pm"
+      value: "+94 70 250 5007",
+      description: "Mon-Fri from 8.30am to 5.30pm"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      value: "123 Tech Street, Innovation City",
+      value: "136/2 Sahilathalarama Rd,Piliyandala 10300, Sri Lanka",
       description: "Our headquarters location"
     }
   ];
