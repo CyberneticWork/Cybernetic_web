@@ -10,13 +10,13 @@ const AboutPage = () => {
   const achievements = [
     {
       icon: Users,
-      number: "10+",
+      number: "50+",
       label: "Expert Team Members",
       description: "Skilled professionals across various technologies"
     },
     {
       icon: Award,
-      number: "100+",
+      number: "500+",
       label: "Successful Projects",
       description: "Delivered with excellence and on time"
     },
@@ -88,7 +88,7 @@ const AboutPage = () => {
     {
       name: "THILINI",
       role: "Customer Coordinator ",
-      experience: " Customer Coordinator ",
+      experience: "Customer Relations and Support",
       image: "/images/Thilini-Customer Coordinator.jpg"
     },
     {
