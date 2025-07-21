@@ -2,7 +2,7 @@ import { Users, Award, Globe, Heart, Target, Eye, Lightbulb } from 'lucide-react
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import LiveChat from '@/components/LiveChat';
+// import LiveChat from '@/components/LiveChat';
 
 const AboutPage = () => {
   const [teamImages, setTeamImages] = useState({});
@@ -38,8 +38,8 @@ const AboutPage = () => {
   const teamMembers = [
     {
       name: "Y. IMESHA RANGANA",
-      role: "Software Engineer",
-      experience: "Experienced in system development",
+      role: "Managing Director",
+      experience: "Leadership and Strategic Vision",
       image: "/images/imesha.jpg"
     },
     {
@@ -52,7 +52,7 @@ const AboutPage = () => {
       name: "JANITHA SANDARUWAN",
       role: "Software Engineer",
       experience: "Expert in Software Development",
-      image: "/images/Janitha.jpg"
+      image: "/images/janitha.jpg"
     },
    
     {
@@ -71,7 +71,7 @@ const AboutPage = () => {
       name: "THUSHARA GUNAWARDHANE",
       role: "Software Engineer",
       experience: "Full-stack Development Expertise",
-      image: "/images/Thushara-Software Engineer.jpg"
+      image: "/images/thushara.jpg"
     },
     {
       name: "SHALITHA GAMAGE",
@@ -86,25 +86,20 @@ const AboutPage = () => {
       image: "/images/Isuru-SE.png"
     },
     {
-      name: "THILINI",
+      name: "THILINI RAVIHARI",
       role: "Customer Coordinator ",
       experience: "Customer Relations and Support",
-      image: "/images/Thilini-Customer Coordinator.jpg"
+      image: "/images/pm.jpg"
     },
-    {
-      name: "AZEEM",
-      role: "Digital Marketing Agent",
-      experience: "Digital Marketing Agent",
-      image: "/images/Azeem - Digital Marketing Agent.jpg"
-    },
+ 
      {
-      name: "BANUKA",
+      name: "BANUKA SHAMEN",
       role: "Intern Software Engineer",
       experience: "Full-stack Development and Testing",
       image: "/images/Bhanuka-SE.jpg"
     },
      {
-      name: "JUDE",
+      name: "S JUDE",
       role: "ML Engineer",
       experience: "Machine Learning and Data Analysis",
       image: "/images/Jude - ML Engineer.jpg"
@@ -298,7 +293,7 @@ const AboutPage = () => {
       </section>
 
       <Footer />
-      <LiveChat />
+     
     </div>
   );
 };

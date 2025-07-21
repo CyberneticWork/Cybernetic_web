@@ -2,7 +2,7 @@ import { ArrowRight, Code, Cloud, Shield, Smartphone, Database, Zap, Users, Glob
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import LiveChat from '@/components/LiveChat';
+// import LiveChat from '@/components/LiveChat';
 
 const ServicesPage = () => {
   const services = [
@@ -254,7 +254,7 @@ const ServicesPage = () => {
       </section>
 
       <Footer />
-      <LiveChat />
+     
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import LiveChat from '@/components/LiveChat';
+// import LiveChat from '@/components/LiveChat';
 import Map from '@/components/Map';
 
 const ContactPage = () => {
@@ -351,7 +351,7 @@ const ContactPage = () => {
       </section>
 
       <Footer />
-      <LiveChat />
+   
     </div>
   );
 };

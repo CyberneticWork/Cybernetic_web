@@ -2,7 +2,7 @@ import { Briefcase, Users, Award, TrendingUp, Heart, Coffee, Gamepad2, Graduatio
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import LiveChat from '@/components/LiveChat';
+// import LiveChat from '@/components/LiveChat';
 
 const CareersPage = () => {
   const benefits = [
@@ -291,7 +291,7 @@ const CareersPage = () => {
       </section>
 
       <Footer />
-      <LiveChat />
+   
     </div>
   );
 };
