@@ -42,7 +42,7 @@ const About = () => {
           <div className="animate-fade-in-up">
             <div className="inline-flex items-center gap-2 glass rounded-full px-6 py-3 mb-6">
               <Users className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">About Cybernetic Software Solutions</span>
+              <span className="text-sm font-medium">About Cybernetic Technologies Pvt Ltd</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -64,7 +64,7 @@ const About = () => {
               </p>
 
               <p>
-                Founded in 2021, Cybernetic Software Solutions is committed to becoming a global leader in providing innovative and cost-effective IT solutions. We focus on driving efficiency, enhancing user experiences, and fostering sustainable growth for our clients by delivering tailored technology services. Our key strengths include expertise in integrating multi-vendor technologies, proven experience in IT transformation, comprehensive IT lifecycle services, and uncompromised commitment to service quality. We provide end-to-end IT solutions covering data storage, virtualization, networking, and security. Our goal is to be a trusted long-term partner, helping businesses thrive in the digital age.
+                Founded in 2021, Cybernetic Technologies Pvt Ltd is committed to becoming a global leader in providing innovative and cost-effective IT solutions. We focus on driving efficiency, enhancing user experiences, and fostering sustainable growth for our clients by delivering tailored technology services. Our key strengths include expertise in integrating multi-vendor technologies, proven experience in IT transformation, comprehensive IT lifecycle services, and uncompromised commitment to service quality. We provide end-to-end IT solutions covering data storage, virtualization, networking, and security. Our goal is to be a trusted long-term partner, helping businesses thrive in the digital age.
                 </p>
             </div>
 

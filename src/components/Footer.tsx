@@ -12,10 +12,10 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
                 <Globe className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold gradient-text">Cybernetic Software Solutions</span>
+              <span className="text-xl font-bold gradient-text">Cybernetic Technologies Pvt Ltd</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Cybernetic Software Solutions - Leading software solution company providing innovative and cost-effective IT solutions worldwide.
+              Cybernetic Technologies Pvt Ltd - Leading software solution company providing innovative and cost-effective IT solutions worldwide.
             </p>
           </div>
 
@@ -38,8 +38,8 @@ const Footer = () => {
               <div className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 mt-0.5" />
                 <span className="text-sm">
-                  136/2 Sahilathalarama Rd,<br />
-                  Piliyandala 10300, Sri Lanka
+                 No 1180, Rajamalwatta road<br />
+                  Battaramulla 10300, Sri Lanka
                 </span>
               </div>
             </div>
@@ -103,7 +103,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Copyright */}
             <div className="text-muted-foreground text-sm">
-              © 2025 Cybernetic Software Solutions. All rights reserved.
+              © 2025 Cybernetic Technologies Pvt Ltd. All rights reserved.
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ const LiveChat = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hello! Welcome to Cybernetic Software Solutions. How can I help you today?',
+      text: 'Hello! Welcome to Cybernetic Technologies Pvt Ltd. How can I help you today?',
       sender: 'bot',
       timestamp: new Date()
     }
@@ -25,12 +25,12 @@ const LiveChat = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const botResponses = [
-    "Thank you for your interest! Cybernetic Software Solutions specializes in custom software development, cloud solutions, and digital transformation.",
+    "Thank you for your interest! Cybernetic Technologies Pvt Ltd specializes in custom software development, cloud solutions, and digital transformation.",
     "I'd be happy to help you learn more about our services. Would you like to schedule a free consultation with Cybernetic?",
     "Our expert team is available 24/7 to support your technology needs. What specific challenges are you facing?",
     "We've successfully completed hundreds of projects for clients worldwide. Let me connect you with one of our solution architects at Cybernetic.",
     "Great question! Our solutions are designed to scale with your business. Would you like to discuss your specific requirements?",
-    "Security is a top priority at Cybernetic Software Solutions. We implement enterprise-grade security measures in all our solutions.",
+    "Security is a top priority at Cybernetic Technologies Pvt Ltd. We implement enterprise-grade security measures in all our solutions.",
     "Our development process includes thorough testing, documentation, and ongoing support. What's your project timeline?",
     "We offer flexible engagement models including fixed-price projects, dedicated teams, and hourly consulting."
   ];

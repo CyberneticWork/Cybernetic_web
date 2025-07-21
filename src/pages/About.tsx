@@ -122,7 +122,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-flex items-center gap-2 glass rounded-full px-6 py-3 mb-8">
             <Users className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">About Cybernetic Software Solutions</span>
+            <span className="text-sm font-medium">About Cybernetic Technologies Pvt Ltd</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
@@ -149,7 +149,7 @@ const AboutPage = () => {
 
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in 2021, Cybernetic Software Solutions is committed to becoming a global leader 
+                  Founded in 2021, Cybernetic Technologies Pvt Ltd is committed to becoming a global leader 
                   in providing innovative and cost-effective IT solutions. We focus on driving efficiency, 
                   enhancing user experiences, and fostering sustainable growth for our clients by delivering 
                   tailored technology services.

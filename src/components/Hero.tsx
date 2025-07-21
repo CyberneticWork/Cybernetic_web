@@ -21,7 +21,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 glass rounded-full px-6 py-3 mb-8 animate-fade-in-up">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Cybernetic Software Solutions – Premium IT Solutions</span>
+            <span className="text-sm font-medium">Cybernetic Technologies Pvt Ltd – Premium IT Solutions</span>
           </div>
 
           {/* Main Heading */}

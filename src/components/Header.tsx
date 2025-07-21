@@ -42,7 +42,7 @@ const Header = () => {
         className="w-full h-full object-contain"
       />
     </div>
-    <span className="font-bold text-xl gradient-text">Cybernetic Software Solutions</span>
+    <span className="font-bold text-xl gradient-text">Cybernetic Technologies Pvt Ltd</span>
   </Link>
 
 

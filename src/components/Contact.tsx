@@ -62,7 +62,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      value: "136/2 Sahilathalarama Rd,Piliyandala 10300, Sri Lanka",
+      value: "No 1180, Rajamalwatta road, Battaramulla 10300, Sri Lanka",
       description: "Our headquarters location"
     }
   ];
