@@ -48,25 +48,27 @@ const AboutPage = () => {
       experience: "Leadership and Full-stack Development",
       image: "/images/eshan.jpg"
     },
-    {
-      name: "JANITHA SANDARUWAN",
-      role: "Software Engineer",
-      experience: "Expert in Software Development",
-      image: "/images/janitha.jpg"
-    },
-   
-    {
+     {
       name: "UDARI PIYUMIKA",
       role: "Software Engineer Leader",
       experience: "Technical Leadership and Development",
       image: "/images/Udari - SE.jpg"
     },
     {
+      name: "JANITHA SANDARUWAN",
+      role: "Software Engineer",
+      experience: "Expert in Software Development",
+      image: "/images/janitha.jpg"
+    },
+       {
       name: "THULAKSHI RUCHINI",
       role: "Project Manager",
       experience: "Project Management and Delivery",
       image: "/images/Ruchini - PM.png"
     },
+   
+   
+ 
     {
       name: "THUSHARA GUNAWARDHANE",
       role: "Software Engineer",
