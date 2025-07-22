@@ -71,9 +71,9 @@ const ContactPage = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      value: "136/2 Sahilathalarama Rd, Piliyandala 10300, Sri Lanka",
+      value: "No 1180, Rajamalwatta road, Battaramulla 10300",
       description: "Our headquarters location",
-      link: "https://maps.google.com/?q=136/2+Sahilathalarama+Rd,+Piliyandala+10300,+Sri+Lanka"
+      link: "https://maps.google.com/?q=No+1180,+Rajamalwatta+road,+Battaramulla+10300"
     },
     {
       icon: Globe,
@@ -86,8 +86,8 @@ const ContactPage = () => {
 
   const offices = [
     {
-      city: "Piliyandala",
-      address: "136/2 Sahilathalarama Rd, Piliyandala 10300, Sri Lanka",
+      city: "Battaramulla",
+      address: "No 1180, Rajamalwatta road, Battaramulla 10300",
       phone: "+94 70 250 5007",
       timezone: "GMT+5:30"
     }
@@ -304,7 +304,7 @@ const ContactPage = () => {
               Find <span className="gradient-text">Our Office</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Visit us at our headquarters in Piliyandala, Sri Lanka
+              Visit us at our headquarters in Battaramulla, Sri Lanka
             </p>
           </div>
 
@@ -313,8 +313,8 @@ const ContactPage = () => {
               {/* Google Map Embed for Piliyandala */}
               <div className="rounded-2xl overflow-hidden shadow-lg w-full h-[400px]">
                 <iframe
-                  title="Cybernetic Piliyandala Location"
-                  src="https://www.google.com/maps?q=136/2+Sahilathalarama+Rd,+Piliyandala+10300,+Sri+Lanka&output=embed"
+                  title="Cybernetic Battaramulla Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.419480340194!2d79.91545327499632!3d6.901071993098213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259ffc033c151%3A0xf280be0865b4c17d!2s1180%20Rajamalwatta%20Rd%2C%20Battaramulla%2010120!5e1!3m2!1sen!2slk!4v1753200964577"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
