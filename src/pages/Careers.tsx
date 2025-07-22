@@ -2,7 +2,7 @@ import { Briefcase, Users, Award, TrendingUp, Heart, Coffee, Gamepad2, Graduatio
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-// import LiveChat from '@/components/LiveChat';
+import React from 'react';
 
 const CareersPage = () => {
   const benefits = [
@@ -29,47 +29,25 @@ const CareersPage = () => {
   ];
 
   const openPositions = [
-    
     {
-      title: "No Position Available",
-      department: "***",
-      location: "",
-      type: "",
-      experience: "",
-      description: ""
-    },
-    // {
-    //   title: "UX/UI Designer",
-    //   department: "Design",
-    //   location: "San Francisco, CA / Remote",
-    //   type: "Full-time",
-    //   experience: "4+ years",
-    //   description: "Create intuitive and beautiful user experiences for our enterprise software solutions."
-    // },
-    // {
-    //   title: "Product Manager",
-    //   department: "Product",
-    //   location: "New York, NY / Remote",
-    //   type: "Full-time",
-    //   experience: "6+ years",
-    //   description: "Drive product strategy and roadmap for our flagship SaaS products and client solutions."
-    // },
-    // {
-    //   title: "Sales Development Representative",
-    //   department: "Sales",
-    //   location: "Remote",
-    //   type: "Full-time",
-    //   experience: "2+ years",
-    //   description: "Generate qualified leads and build relationships with potential enterprise clients."
-    // },
-    // {
-    //   title: "Machine Learning Engineer",
-    //   department: "AI/ML",
-    //   location: "Boston, MA / Remote",
-    //   type: "Full-time",
-    //   experience: "4+ years",
-    //   description: "Develop and deploy ML models to solve complex business problems for our clients."
-    // }
+      title: "Digital Marketing Agent",
+      department: "Marketing",
+      location: "Remote / Sri Lanka",
+      type: "Full-time",
+      experience: "2+ years",
+      description: "Join our team as a Digital Marketing Agent to elevate our online presence through creative social media campaigns, website management, and customer engagement.",
+      imageUrl: "/images/jobpost/digitel.jpg",
+      requirements: [
+        "Social Media Marketing: Crafting engaging Facebook posts and compelling video ads",
+        "Website Management: Maintaining and updating our company website",
+        "Customer Handling: Excellent communication skills for customer inquiries",
+        "English Language Proficiency: Strong written and verbal English skills"
+      ],
+      contact: {
+        email: "info@cybernetic.lk",
+        phone: "070 250 5007"
+      }
+    }
   ];
 
   const companyValues = [
@@ -95,10 +73,16 @@ const CareersPage = () => {
     }
   ];
 
+  const [expandedPosition, setExpandedPosition] = React.useState(null);
+
   const handleApply = (positionTitle) => {
     const subject = `Application for ${positionTitle} Position`;
     const mailtoLink = `mailto:info@cybernetic.lk?subject=${encodeURIComponent(subject)}&body=Please attach your CV and include a brief introduction about yourself.`;
     window.location.href = mailtoLink;
+  };
+
+  const toggleExpandPosition = (index) => {
+    setExpandedPosition(expandedPosition === index ? null : index);
   };
 
   return (
@@ -201,7 +185,6 @@ const CareersPage = () => {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
@@ -219,46 +202,78 @@ const CareersPage = () => {
 
           <div className="space-y-6">
             {openPositions.map((position, index) => (
-              <div key={index} className="glass rounded-2xl p-8 card-hover animate-fade-in-up"
+              <div key={index} className="glass rounded-2xl overflow-hidden card-hover animate-fade-in-up"
                    style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-3 mb-3">
-                      <h3 className="text-2xl font-bold">{position.title}</h3>
-                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                        {position.department}
-                      </span>
+                <div className="p-8">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <h3 className="text-2xl font-bold">{position.title}</h3>
+                        <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                          {position.department}
+                        </span>
+                      </div>
+                      
+                      <p className="text-muted-foreground mb-4 leading-relaxed">
+                        {position.description}
+                      </p>
+                      
+                      <div className="mb-6">
+                        <h4 className="font-bold mb-2">Requirements:</h4>
+                        <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                          {position.requirements.map((req, i) => (
+                            <li key={i}>{req}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="flex flex-wrap gap-4 text-sm">
+                        <div className="flex items-center gap-1">
+                          <span className="font-medium">Location:</span>
+                          <span className="text-muted-foreground">{position.location}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="font-medium">Type:</span>
+                          <span className="text-muted-foreground">{position.type}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="font-medium">Experience:</span>
+                          <span className="text-muted-foreground">{position.experience}</span>
+                        </div>
+                      </div>
                     </div>
                     
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {position.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-4 text-sm">
-                      <div className="flex items-center gap-1">
-                        <span className="font-medium">Location:</span>
-                        <span className="text-muted-foreground">{position.location}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <span className="font-medium">Type:</span>
-                        <span className="text-muted-foreground">{position.type}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <span className="font-medium">Experience:</span>
-                        <span className="text-muted-foreground">{position.experience}</span>
-                      </div>
+                    <div className="lg:ml-6 flex flex-col gap-3">
+                      <Button 
+                        className="btn-gradient text-primary-foreground px-6 py-3 rounded-full w-full lg:w-auto"
+                        onClick={() => handleApply(position.title)}
+                      >
+                        Apply Now
+                      </Button>
+                      {position.imageUrl && (
+                        <Button 
+                          variant="outline" 
+                          className="glass border-primary/30 hover:border-primary px-6 py-3 rounded-full w-full lg:w-auto"
+                          onClick={() => toggleExpandPosition(index)}
+                        >
+                          {expandedPosition === index ? 'Hide Job Post' : 'View Job Post'}
+                        </Button>
+                      )}
                     </div>
-                  </div>
-                  
-                  <div className="lg:ml-6">
-                    <Button 
-                      className="btn-gradient text-primary-foreground px-6 py-3 rounded-full w-full lg:w-auto"
-                      onClick={() => handleApply(position.title)}
-                    >
-                      Apply Now
-                    </Button>
                   </div>
                 </div>
+
+                {expandedPosition === index && position.imageUrl && (
+                  <div className="p-4 bg-background/50 border-t border-border/50">
+                    <div className="w-full max-w-2xl mx-auto rounded-lg overflow-hidden">
+                      <img
+                        src={position.imageUrl}
+                        alt={`${position.title} job post`}
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -273,9 +288,15 @@ const CareersPage = () => {
                 We're always looking for exceptional talent. Send your CV to info@cybernetic.lk 
                 and tell us how you'd like to contribute to our mission.
               </p>
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <Mail className="w-5 h-5 text-primary" />
-                <span className="font-medium">info@cybernetic.lk</span>
+              <div className="flex flex-col items-center gap-4 mb-6">
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-primary" />
+                  <span className="font-medium">{openPositions[0]?.contact?.email || 'info@cybernetic.lk'}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="font-medium">Phone:</span>
+                  <span className="text-muted-foreground">{openPositions[0]?.contact?.phone || '070 250 5007'}</span>
+                </div>
               </div>
               <Button 
                 className="btn-gradient text-primary-foreground px-8 py-4 rounded-full"
@@ -291,7 +312,6 @@ const CareersPage = () => {
       </section>
 
       <Footer />
-   
     </div>
   );
 };
