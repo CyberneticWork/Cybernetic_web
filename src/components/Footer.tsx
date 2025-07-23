@@ -39,7 +39,7 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 mt-0.5" />
                 <span className="text-sm">
                  No 1180, Rajamalwatta road<br />
-                  Battaramulla 10300, Sri Lanka
+                  Battaramulla Sri Lanka
                 </span>
               </div>
             </div>

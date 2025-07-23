@@ -71,7 +71,7 @@ const ContactPage = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      value: "No 1180, Rajamalwatta road, Battaramulla 10300",
+      value: "No 1180, Rajamalwatta road, Battaramulla",
       description: "Our headquarters location",
       link: "https://maps.google.com/?q=No+1180,+Rajamalwatta+road,+Battaramulla+10300"
     },
@@ -87,7 +87,7 @@ const ContactPage = () => {
   const offices = [
     {
       city: "Battaramulla",
-      address: "No 1180, Rajamalwatta road, Battaramulla 10300",
+      address: "No 1180, Rajamalwatta road, Battaramulla",
       phone: "+94 70 250 5007",
       timezone: "GMT+5:30"
     }

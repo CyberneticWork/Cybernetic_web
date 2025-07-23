@@ -62,7 +62,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      value: "No 1180, Rajamalwatta road, Battaramulla 10300, Sri Lanka",
+      value: "No 1180, Rajamalwatta road, Battaramulla Sri Lanka",
       description: "Our headquarters location"
     }
   ];
