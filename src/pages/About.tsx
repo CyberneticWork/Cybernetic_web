@@ -50,7 +50,7 @@ const AboutPage = () => {
     },
      {
       name: "UDARI PIYUMIKA",
-      role: "Software Engineer Leader",
+      role: "Team Leader and Software Engineer",
       experience: "Technical Leadership and Development",
       image: "/images/Udari - SE.jpg"
     },
@@ -66,9 +66,6 @@ const AboutPage = () => {
       experience: "Project Management and Delivery",
       image: "/images/Ruchini - PM.png"
     },
-   
-   
- 
     {
       name: "THUSHARA GUNAWARDHANE",
       role: "Software Engineer",
@@ -96,7 +93,7 @@ const AboutPage = () => {
  
      {
       name: "BANUKA SHAMEN",
-      role: "Intern Software Engineer",
+      role: "Software Engineer",
       experience: "Full-stack Development and Testing",
       image: "/images/Bhanuka-SE.jpg"
     },
@@ -106,6 +103,25 @@ const AboutPage = () => {
       experience: "Machine Learning and Data Analysis",
       image: "/images/Jude - ML Engineer.jpg"
     },
+    {
+      name: "Pasindu Pathum",
+      role: "Software Engineer",
+      experience: "Full-stack Development and Testing",
+      image: "/images/Pasindu Pathum.jpg"
+    },
+    {
+      name: "Pawani Madhubhashini",
+      role: "QA Engineer",
+      experience: "Quality Assurance and Testing",
+      image: "/images/Pawani Madhubashini.jpg"
+    },
+      {
+      name: "Pubudu Ruwan",
+      role: "Digital Marketing Executive",
+      experience: "Digital Marketing and SEO",
+      image: "/images/Pubudu Ruwan.jpg"
+    }
+
   ];
 
   return (

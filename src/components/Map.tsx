@@ -42,7 +42,7 @@ const Map = () => {
         .setLngLat([-74.0059, 40.7128])
         .setPopup(
           new (mapboxgl.default as any).Popup({ offset: 25 })
-            .setHTML('<h3>TechSolutions Pro</h3><p>123 Tech Street, Innovation City</p>')
+            .setHTML('<h3>Cybernetic Technologies Pvt Ltd</h3><p>123 Tech Street, Innovation City</p>')
         )
         .addTo(map);
 

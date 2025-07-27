@@ -52,7 +52,7 @@ const About = () => {
 
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                Since our founding, TechSolutions Pro has been at the forefront of technological 
+                Since our founding, Cybernetic Technologies Pvt Ltd has been at the forefront of technological 
                 innovation, helping businesses transform their operations and achieve unprecedented growth 
                 through cutting-edge digital solutions.
               </p>
