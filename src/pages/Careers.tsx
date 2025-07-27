@@ -29,25 +29,25 @@ const CareersPage = () => {
   ];
 
   const openPositions = [
-    {
-      title: "Digital Marketing Agent",
-      department: "Marketing",
-      location: "Remote / Sri Lanka",
-      type: "Full-time",
-      experience: "2+ years",
-      description: "Join our team as a Digital Marketing Agent to elevate our online presence through creative social media campaigns, website management, and customer engagement.",
-      imageUrl: "/images/jobpost/digitel.jpg",
-      requirements: [
-        "Social Media Marketing: Crafting engaging Facebook posts and compelling video ads",
-        "Website Management: Maintaining and updating our company website",
-        "Customer Handling: Excellent communication skills for customer inquiries",
-        "English Language Proficiency: Strong written and verbal English skills"
-      ],
-      contact: {
-        email: "info@cybernetic.lk",
-        phone: "070 250 5007"
-      }
-    }
+    // {
+    //   title: "Digital Marketing Agent",
+    //   department: "Marketing",
+    //   location: "Remote / Sri Lanka",
+    //   type: "Full-time",
+    //   experience: "2+ years",
+    //   description: "Join our team as a Digital Marketing Agent to elevate our online presence through creative social media campaigns, website management, and customer engagement.",
+    //   imageUrl: "/images/jobpost/digitel.jpg",
+    //   requirements: [
+    //     "Social Media Marketing: Crafting engaging Facebook posts and compelling video ads",
+    //     "Website Management: Maintaining and updating our company website",
+    //     "Customer Handling: Excellent communication skills for customer inquiries",
+    //     "English Language Proficiency: Strong written and verbal English skills"
+    //   ],
+    //   contact: {
+    //     email: "info@cybernetic.lk",
+    //     phone: "070 250 5007"
+    //   }
+    // }
   ];
 
   const companyValues = [
