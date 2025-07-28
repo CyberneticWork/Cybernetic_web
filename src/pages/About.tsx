@@ -92,7 +92,7 @@ const AboutPage = () => {
     },
  
      {
-      name: "BANUKA SHAMEN",
+      name: "BHANUKA SHAMEN",
       role: "Software Engineer",
       experience: "Full-stack Development and Testing",
       image: "/images/Bhanuka-SE.jpg"
