@@ -44,7 +44,7 @@ const AboutPage = () => {
     },
     {
       name: "ESHAN DANANJAYA",
-      role: "Team Leader & Associate Software Engineer",
+      role: "Team Leader & Software Engineer",
       experience: "Leadership and Full-stack Development",
       image: "/images/eshan.jpg"
     },
