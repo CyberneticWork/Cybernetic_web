@@ -58,7 +58,7 @@ const AboutPage = () => {
       name: "JANITHA SANDARUWAN",
       role: "Software Engineer",
       experience: "Expert in Software Development",
-      image: "/images/janitha.jpg"
+      image: "/images/Janitha.jpg"
     },
        {
       name: "THULAKSHI RUCHINI",
