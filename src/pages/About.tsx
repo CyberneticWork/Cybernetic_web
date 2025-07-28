@@ -103,12 +103,7 @@ const AboutPage = () => {
       experience: "Machine Learning and Data Analysis",
       image: "/images/Jude - ML Engineer.jpg"
     },
-    {
-      name: "Pasindu Pathum",
-      role: "Software Engineer",
-      experience: "Full-stack Development and Testing",
-      image: "/images/Pasindu Pathum.jpg"
-    },
+    
     {
       name: "Pawani Madhubhashini",
       role: "QA Engineer",
