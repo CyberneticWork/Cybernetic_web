@@ -27,31 +27,63 @@ const ContactPage = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
-      return;
-    }
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
+  if (!formData.name || !formData.email || !formData.message) {
+    toast({
+      title: "Missing Information",
+      description: "Please fill in all required fields.",
+      variant: "destructive"
+    });
+    return;
+  }
 
-    setIsSubmitting(true);
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+  try {
+    const response = await fetch('http://localhost:3001/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
       toast({
         title: "Message Sent Successfully!",
         description: "Thank you for contacting us. We'll get back to you within 24 hours.",
       });
       
-      setFormData({ name: '', email: '', company: '', phone: '', service: '', budget: '', message: '' });
-      setIsSubmitting(false);
-    }, 2000);
-  };
+      setFormData({ 
+        name: '', 
+        email: '', 
+        company: '', 
+        phone: '', 
+        service: '', 
+        budget: '', 
+        message: '' 
+      });
+    } else {
+      toast({
+        title: "Failed to Send Message",
+        description: data.message || "Please try again later.",
+        variant: "destructive"
+      });
+    }
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: "An error occurred while sending your message.",
+      variant: "destructive"
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const contactInfo = [
     {
