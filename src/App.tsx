@@ -10,11 +10,14 @@ import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import CareersPage from "./pages/Careers";
 import NotFound from "./pages/NotFound";
+import LiveChat from "./components/LiveChat"; // Import LiveChat component
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <LiveChat /> {/* Render LiveChat component */}
+    {/* Other components and routes can be added here */}
     <ThemeProvider
       attribute="class"
       defaultTheme="dark"

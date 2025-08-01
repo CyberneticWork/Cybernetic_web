@@ -6,33 +6,33 @@ import { Input } from "@/components/ui/input";
 interface Message {
   id: string;
   text: string;
-  sender: "user" | "bot";
+  sender: "user" | "hr";
   timestamp: Date;
 }
 
 const LiveChat = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "1",
-      text: "Hello! Welcome to Cybernetic Technologies Pvt Ltd. How can I help you today?",
-      sender: "bot",
-      timestamp: new Date(),
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>(
+    [
+      {
+        id: "1",
+        text: "Hello! Welcome to Cybernetic Technologies Pvt Ltd. You are now chatting with HR. How can we assist you?",
+        sender: "hr",
+        timestamp: new Date(),
+      },
+    ]
+  );
   const [newMessage, setNewMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const botResponses = [
-    "Thank you for your interest! Cybernetic Technologies Pvt Ltd specializes in custom software development, cloud solutions, and digital transformation.",
-    "I'd be happy to help you learn more about our services. Would you like to schedule a free consultation with Cybernetic?",
-    "Our expert team is available 24/7 to support your technology needs. What specific challenges are you facing?",
-    "We've successfully completed hundreds of projects for clients worldwide. Let me connect you with one of our solution architects at Cybernetic.",
-    "Great question! Our solutions are designed to scale with your business. Would you like to discuss your specific requirements?",
-    "Security is a top priority at Cybernetic Technologies Pvt Ltd. We implement enterprise-grade security measures in all our solutions.",
-    "Our development process includes thorough testing, documentation, and ongoing support. What's your project timeline?",
-    "We offer flexible engagement models including fixed-price projects, dedicated teams, and hourly consulting.",
+  const hrResponses = [
+    "Thank you for reaching out to HR! How can we help you today?",
+    "We are happy to answer any questions about careers, company culture, or open positions.",
+    "Feel free to ask about our recruitment process or benefits.",
+    "Would you like to schedule a call with our HR team?",
+    "We value your interest in Cybernetic Technologies Pvt Ltd.",
+    "Our HR team is available to support your career growth.",
   ];
 
   const scrollToBottom = () => {
@@ -43,9 +43,9 @@ const LiveChat = () => {
     scrollToBottom();
   }, [messages]);
 
-  const generateBotResponse = () => {
+  const generateHrResponse = () => {
     const randomResponse =
-      botResponses[Math.floor(Math.random() * botResponses.length)];
+      hrResponses[Math.floor(Math.random() * hrResponses.length)];
     return randomResponse;
   };
 
@@ -66,16 +66,16 @@ const LiveChat = () => {
     setNewMessage("");
     setIsTyping(true);
 
-    // Simulate bot response delay
+    // Simulate HR response delay
     setTimeout(() => {
-      const botMessage: Message = {
+      const hrMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: generateBotResponse(),
-        sender: "bot",
+        text: generateHrResponse(),
+        sender: "hr",
         timestamp: new Date(),
       };
 
-      setMessages((prev) => [...prev, botMessage]);
+      setMessages((prev) => [...prev, hrMessage]);
       setIsTyping(false);
     }, 1500 + Math.random() * 1000);
   };
@@ -116,9 +116,9 @@ const LiveChat = () => {
                 <Bot className="w-5 h-5 text-primary-foreground" />
               </div>
               <div>
-                <h3 className="font-semibold">TechSolutions Support</h3>
+                <h3 className="font-semibold">HR Support</h3>
                 <p className="text-xs text-muted-foreground">
-                  Usually responds instantly
+                  Chat with our HR team
                 </p>
               </div>
             </div>
@@ -149,7 +149,7 @@ const LiveChat = () => {
                   }`}
                 >
                   <div className="flex items-start gap-2">
-                    {message.sender === "bot" && (
+                    {message.sender === "hr" && (
                       <Bot className="w-4 h-4 mt-1 text-primary" />
                     )}
                     {message.sender === "user" && (
