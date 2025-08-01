@@ -1,12 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { useState, useRef, useEffect } from "react";
+import { MessageCircle, X, Send, Bot, User } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 interface Message {
   id: string;
   text: string;
-  sender: 'user' | 'bot';
+  sender: "user" | "bot";
   timestamp: Date;
 }
 
@@ -14,13 +14,13 @@ const LiveChat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: '1',
-      text: 'Hello! Welcome to Cybernetic Technologies Pvt Ltd. How can I help you today?',
-      sender: 'bot',
-      timestamp: new Date()
-    }
+      id: "1",
+      text: "Hello! Welcome to Cybernetic Technologies Pvt Ltd. How can I help you today?",
+      sender: "bot",
+      timestamp: new Date(),
+    },
   ]);
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -32,11 +32,11 @@ const LiveChat = () => {
     "Great question! Our solutions are designed to scale with your business. Would you like to discuss your specific requirements?",
     "Security is a top priority at Cybernetic Technologies Pvt Ltd. We implement enterprise-grade security measures in all our solutions.",
     "Our development process includes thorough testing, documentation, and ongoing support. What's your project timeline?",
-    "We offer flexible engagement models including fixed-price projects, dedicated teams, and hourly consulting."
+    "We offer flexible engagement models including fixed-price projects, dedicated teams, and hourly consulting.",
   ];
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -44,25 +44,26 @@ const LiveChat = () => {
   }, [messages]);
 
   const generateBotResponse = () => {
-    const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
+    const randomResponse =
+      botResponses[Math.floor(Math.random() * botResponses.length)];
     return randomResponse;
   };
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!newMessage.trim()) return;
 
     // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
       text: newMessage,
-      sender: 'user',
-      timestamp: new Date()
+      sender: "user",
+      timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
-    setNewMessage('');
+    setMessages((prev) => [...prev, userMessage]);
+    setNewMessage("");
     setIsTyping(true);
 
     // Simulate bot response delay
@@ -70,24 +71,24 @@ const LiveChat = () => {
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: generateBotResponse(),
-        sender: 'bot',
-        timestamp: new Date()
+        sender: "bot",
+        timestamp: new Date(),
       };
-      
-      setMessages(prev => [...prev, botMessage]);
+
+      setMessages((prev) => [...prev, botMessage]);
       setIsTyping(false);
     }, 1500 + Math.random() * 1000);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage(e);
     }
   };
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   };
 
   return (
@@ -98,7 +99,11 @@ const LiveChat = () => {
         className="fixed bottom-6 right-6 w-14 h-14 rounded-full btn-gradient shadow-glow z-50 hover:scale-110 transition-transform"
         size="icon"
       >
-        {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
+        {isOpen ? (
+          <X className="w-6 h-6" />
+        ) : (
+          <MessageCircle className="w-6 h-6" />
+        )}
       </Button>
 
       {/* Chat Window */}
@@ -112,7 +117,9 @@ const LiveChat = () => {
               </div>
               <div>
                 <h3 className="font-semibold">TechSolutions Support</h3>
-                <p className="text-xs text-muted-foreground">Usually responds instantly</p>
+                <p className="text-xs text-muted-foreground">
+                  Usually responds instantly
+                </p>
               </div>
             </div>
             <Button
@@ -130,29 +137,31 @@ const LiveChat = () => {
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'} chat-appear`}
+                className={`flex ${
+                  message.sender === "user" ? "justify-end" : "justify-start"
+                } chat-appear`}
               >
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-2 ${
-                    message.sender === 'user'
-                      ? 'bg-gradient-primary text-primary-foreground'
-                      : 'glass border border-border/20'
+                    message.sender === "user"
+                      ? "bg-gradient-primary text-primary-foreground"
+                      : "glass border border-border/20"
                   }`}
                 >
                   <div className="flex items-start gap-2">
-                    {message.sender === 'bot' && (
+                    {message.sender === "bot" && (
                       <Bot className="w-4 h-4 mt-1 text-primary" />
                     )}
-                    {message.sender === 'user' && (
+                    {message.sender === "user" && (
                       <User className="w-4 h-4 mt-1 text-primary-foreground" />
                     )}
                     <div className="flex-1">
                       <p className="text-sm leading-relaxed">{message.text}</p>
                       <p
                         className={`text-xs mt-1 ${
-                          message.sender === 'user'
-                            ? 'text-primary-foreground/70'
-                            : 'text-muted-foreground'
+                          message.sender === "user"
+                            ? "text-primary-foreground/70"
+                            : "text-muted-foreground"
                         }`}
                       >
                         {formatTime(message.timestamp)}
@@ -182,7 +191,10 @@ const LiveChat = () => {
           </div>
 
           {/* Input */}
-          <form onSubmit={handleSendMessage} className="p-4 border-t border-border/20">
+          <form
+            onSubmit={handleSendMessage}
+            className="p-4 border-t border-border/20"
+          >
             <div className="flex gap-2">
               <Input
                 value={newMessage}
