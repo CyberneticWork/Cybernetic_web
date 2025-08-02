@@ -69,7 +69,7 @@ const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 animate-fade-in-up animation-delay-600">
             <div className="glass rounded-lg p-6 card-hover">
-              <div className="text-3xl font-bold gradient-text mb-2">500+</div>
+              <div className="text-3xl font-bold gradient-text mb-2">50+</div>
               <div className="text-muted-foreground">Projects Completed</div>
             </div>
             <div className="glass rounded-lg p-6 card-hover">
@@ -81,7 +81,7 @@ const Hero = () => {
               <div className="text-muted-foreground">Expert Support</div>
             </div>
             <div className="glass rounded-lg p-6 card-hover">
-              <div className="text-3xl font-bold gradient-text mb-2">50+</div>
+              <div className="text-3xl font-bold gradient-text mb-2">10+</div>
               <div className="text-muted-foreground">Team Experts</div>
             </div>
           </div>

@@ -4,13 +4,13 @@ const About = () => {
   const achievements = [
     {
       icon: Users,
-      number: "50+",
+      number: "14+",
       label: "Expert Team Members",
       description: "Skilled professionals across various technologies"
     },
     {
       icon: Award,
-      number: "500+",
+      number: "50+",
       label: "Successful Projects",
       description: "Delivered with excellence and on time"
     },

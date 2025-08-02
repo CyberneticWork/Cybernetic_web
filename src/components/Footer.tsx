@@ -105,6 +105,12 @@ const Footer = () => {
             <div className="text-muted-foreground text-sm">
               © 2025 Cybernetic Technologies Pvt Ltd. All rights reserved.
             </div>
+            {/* Legal Links */}
+            <div className="flex gap-4 text-sm">
+              <a href="/privacy-policy" className="hover:underline text-muted-foreground">Privacy Policy</a>
+              <a href="/terms-of-service" className="hover:underline text-muted-foreground">Terms of Service</a>
+              <a href="/refund-policy" className="hover:underline text-muted-foreground">Refund Policy</a>
+            </div>
           </div>
         </div>
       </div>
