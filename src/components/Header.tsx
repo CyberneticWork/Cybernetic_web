@@ -78,6 +78,12 @@ const Header = () => {
             >
               Careers
             </Link>
+            <Link 
+              to="/blog"  
+              className={`transition-colors ${location.pathname === '/blog' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
+            >
+              Blog
+            </Link>
             <ThemeToggle />
           </div>
 
@@ -133,6 +139,15 @@ const Header = () => {
               >
                 Careers
               </Link>
+              <Link 
+                to="/blog"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-left py-2 transition-colors ${location.pathname === '/blog' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
+              >
+                Blog
+              </Link>
+            
+
             </div>
           </div>
         )}

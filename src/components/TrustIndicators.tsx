@@ -4,20 +4,22 @@ import { cn } from '@/lib/utils';
 const TrustIndicators = () => {
   // Sample client logos - replace with actual client logos
   const clientLogos = [
-    { name: "Client 1", logo: "/images/placeholder.svg" },
-    { name: "Client 2", logo: "/images/placeholder.svg" },
-    { name: "Client 3", logo: "/images/placeholder.svg" },
-    { name: "Client 4", logo: "/images/placeholder.svg" },
-    { name: "Client 5", logo: "/images/placeholder.svg" },
-    { name: "Client 6", logo: "/images/placeholder.svg" },
+    { name: "Client 1", logo: "/images/clientlog/1.jpg" },
+    { name: "Client 2", logo: "/images/clientlog/2.jpg" },
+    { name: "Client 3", logo: "/images/clientlog/3.jpg" },
+    { name: "Client 4", logo: "/images/clientlog/4.jpg" },
+    { name: "Client 5", logo: "/images/clientlog/5.jpg" },
+    { name: "Client 6", logo: "/images/clientlog/6.jpg" },
+    { name: "Client 7", logo: "/images/clientlog/7.jpg" },
+    { name: "Client 8", logo: "/images/clientlog/8.jpg" },
+    { name: "Client 9", logo: "/images/clientlog/9.jpg" },
+    { name: "Client 10", logo: "/images/clientlog/10.jpg" },
+    { name: "Client 11", logo: "/images/clientlog/11.jpg" },
+    { name: "Client 12", logo: "/images/clientlog/12.jpg" },
   ];
 
   // Sample badges/certifications - replace with actual badges
-  const badges = [
-    { name: "ISO 27001", logo: "/images/placeholder.svg" },
-    { name: "Microsoft Partner", logo: "/images/placeholder.svg" },
-    { name: "AWS Certified", logo: "/images/placeholder.svg" },
-  ];
+  
 
   return (
     <section className="py-12 relative overflow-hidden">
@@ -43,11 +45,11 @@ const TrustIndicators = () => {
 
         {/* Client Logos Marquee */}
         <div className="relative mb-12 overflow-hidden">
-          <div className="flex space-x-12 animate-marquee">
+          <div className="flex space-x-5 animate-marquee">
             {[...clientLogos, ...clientLogos].map((client, index) => (
               <div 
                 key={index} 
-                className="flex-shrink-0 h-16 w-32 glass rounded-lg flex items-center justify-center p-4 opacity-80 hover:opacity-100 transition-opacity"
+                className="flex-shrink-0 h-20 w-32 glass rounded-lg flex items-center justify-center p-4 opacity-80 hover:opacity-100 transition-opacity"
               >
                 <img 
                   src={client.logo} 
@@ -92,21 +94,7 @@ const TrustIndicators = () => {
         </div>
 
         {/* Certification Badges */}
-        <div className="mt-12 flex flex-wrap justify-center gap-6 animate-fade-in-up animation-delay-600">
-          {badges.map((badge, index) => (
-            <div 
-              key={index} 
-              className="glass rounded-lg p-4 flex items-center gap-3 card-hover"
-            >
-              <img 
-                src={badge.logo} 
-                alt={badge.name}
-                className="h-8 w-8 object-contain"
-              />
-              <span className="text-sm font-medium">{badge.name}</span>
-            </div>
-          ))}
-        </div>
+      
       </div>
 
       {/* Add this CSS to your index.css or create a new animation in your existing CSS */}
