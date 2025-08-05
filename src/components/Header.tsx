@@ -47,34 +47,34 @@ const Header = () => {
 
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link 
+          <div className="hidden md:flex items-center space-x-8 animate-fade-in-down">
+            <Link
               to="/"
-              className={`transition-colors ${location.pathname === '/' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
+              className={`transition-colors pb-2 ${location.pathname === '/' ? 'text-primary font-medium border-t-4 border-primary' : 'text-foreground hover:text-primary border-t-4 border-transparent'}`}
             >
               Home
             </Link>
-            <Link 
+            <Link
               to="/services"
-              className={`transition-colors ${location.pathname === '/services' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
+              className={`transition-colors pb-2 ${location.pathname === '/services' ? 'text-primary font-medium border-t-4 border-primary' : 'text-foreground hover:text-primary border-t-4 border-transparent'}`}
             >
               Services
             </Link>
-            <Link 
+            <Link
               to="/about"
-              className={`transition-colors ${location.pathname === '/about' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
+              className={`transition-colors pb-2 ${location.pathname === '/about' ? 'text-primary font-medium border-t-4 border-primary' : 'text-foreground hover:text-primary border-t-4 border-transparent'}`}
             >
               About
             </Link>
-            <Link 
+            <Link
               to="/contact"
-              className={`transition-colors ${location.pathname === '/contact' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
+              className={`transition-colors pb-2 ${location.pathname === '/contact' ? 'text-primary font-medium border-t-4 border-primary' : 'text-foreground hover:text-primary border-t-4 border-transparent'}`}
             >
               Contact
             </Link>
-            <Link 
+            <Link
               to="/careers"
-              className={`transition-colors ${location.pathname === '/careers' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
+              className={`transition-colors pb-2 ${location.pathname === '/careers' ? 'text-primary font-medium border-t-4 border-primary' : 'text-foreground hover:text-primary border-t-4 border-transparent'}`}
             >
               Careers
             </Link>

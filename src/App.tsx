@@ -11,6 +11,8 @@ import ContactPage from "./pages/Contact";
 import CareersPage from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 import LiveChat from "./components/LiveChat"; // Import LiveChat component
+import AgentDashboard from "./pages/AgentDashboard"; // Import AgentDashboard component
+import Animation3D from "./components/Animation_3d"; // Import the 3D animation component
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,7 @@ const App = () => (
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/careers" element={<CareersPage />} />
+            <Route path="/agent-dashboard" element={<AgentDashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

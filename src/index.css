@@ -4,9 +4,6 @@
 
 /* Cybernetic Technologies Pvt Ltd Design System */
 
-/* Add Inter font from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-
 @layer base {
   :root {
     /* Light Mode - Clean & Bright Theme */
@@ -159,7 +156,6 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    font-family: "Inter", sans-serif;
     background: var(--gradient-hero);
     background-attachment: fixed;
   }

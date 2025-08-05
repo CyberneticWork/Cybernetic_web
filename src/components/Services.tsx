@@ -1,52 +1,88 @@
-import { 
-  Code, 
-  Cloud, 
-  Shield, 
-  Smartphone, 
-  Database, 
+import {
+  Code,
+  Cloud,
+  Shield,
+  Smartphone,
+  Database,
   Zap,
-  ArrowRight 
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const services = [
     {
       icon: Code,
       title: "Custom Software Development",
-      description: "Tailored software solutions built with modern technologies to meet your specific business requirements.",
-      features: ["Full-Stack Development", "API Integration", "Modern Frameworks", "Scalable Architecture"]
+      description:
+        "Tailored software solutions built with modern technologies to meet your specific business requirements.",
+      features: [
+        "Full-Stack Development",
+        "API Integration",
+        "Modern Frameworks",
+        "Scalable Architecture",
+      ],
     },
     {
       icon: Cloud,
       title: "Cloud Infrastructure",
-      description: "Secure, scalable cloud solutions that grow with your business and ensure maximum uptime.",
-      features: ["AWS/Azure/GCP", "Auto-scaling", "Load Balancing", "Disaster Recovery"]
+      description:
+        "Secure, scalable cloud solutions that grow with your business and ensure maximum uptime.",
+      features: [
+        "AWS/Azure/GCP",
+        "Auto-scaling",
+        "Load Balancing",
+        "Disaster Recovery",
+      ],
     },
     {
       icon: Shield,
       title: "Cybersecurity Solutions",
-      description: "Comprehensive security measures to protect your digital assets and ensure compliance.",
-      features: ["Security Audits", "Threat Detection", "Data Encryption", "Compliance Management"]
+      description:
+        "Comprehensive security measures to protect your digital assets and ensure compliance.",
+      features: [
+        "Security Audits",
+        "Threat Detection",
+        "Data Encryption",
+        "Compliance Management",
+      ],
     },
     {
       icon: Smartphone,
       title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
-      features: ["iOS & Android", "React Native", "Flutter", "Progressive Web Apps"]
+      description:
+        "Native and cross-platform mobile applications that deliver exceptional user experiences.",
+      features: [
+        "iOS & Android",
+        "React Native",
+        "Flutter",
+        "Progressive Web Apps",
+      ],
     },
     {
       icon: Database,
       title: "Data Analytics & AI",
-      description: "Turn your data into actionable insights with advanced analytics and machine learning.",
-      features: ["Business Intelligence", "Machine Learning", "Data Visualization", "Predictive Analytics"]
+      description:
+        "Turn your data into actionable insights with advanced analytics and machine learning.",
+      features: [
+        "Business Intelligence",
+        "Machine Learning",
+        "Data Visualization",
+        "Predictive Analytics",
+      ],
     },
     {
       icon: Zap,
       title: "Digital Transformation",
-      description: "Strategic guidance to modernize your business processes and embrace digital innovation.",
-      features: ["Process Automation", "Legacy System Migration", "Digital Strategy", "Change Management"]
-    }
+      description:
+        "Strategic guidance to modernize your business processes and embrace digital innovation.",
+      features: [
+        "Process Automation",
+        "Legacy System Migration",
+        "Digital Strategy",
+        "Change Management",
+      ],
+    },
   ];
 
   return (
@@ -64,22 +100,24 @@ const Services = () => {
             <Zap className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium">Our Services</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="gradient-text">Comprehensive</span> Technology Solutions
+            <span className="gradient-text">Comprehensive</span> Technology
+            Solutions
           </h2>
-          
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From custom software development to digital transformation, we provide end-to-end 
-            technology services that drive innovation and business growth.
+            From custom software development to digital transformation, we
+            provide end-to-end technology services that drive innovation and
+            business growth.
           </p>
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="glass rounded-2xl p-8 card-hover group animate-fade-in-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -92,7 +130,7 @@ const Services = () => {
               <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
-              
+
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 {service.description}
               </p>
@@ -108,8 +146,8 @@ const Services = () => {
               </ul>
 
               {/* Learn More Button */}
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 className="group-hover:bg-primary group-hover:text-primary-foreground transition-all w-full"
               >
                 Learn More
@@ -126,10 +164,15 @@ const Services = () => {
               Ready to Transform Your Business?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Let's discuss how our technology solutions can help you achieve your goals.
+              Let's discuss how our technology solutions can help you achieve
+              your goals.
             </p>
-            <Button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            <Button
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="btn-gradient text-primary-foreground px-8 py-3 rounded-full"
             >
               Start Your Project

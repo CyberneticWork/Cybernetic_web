@@ -2,38 +2,58 @@ import { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, Bot, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { io, Socket } from "socket.io-client";
 
 interface Message {
   id: string;
   text: string;
-  sender: "user" | "hr";
+  sender: "user" | "agent";
   timestamp: Date;
 }
 
 const LiveChat = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>(
-    [
-      {
-        id: "1",
-        text: "Hello! Welcome to Cybernetic Technologies Pvt Ltd. You are now chatting with HR. How can we assist you?",
-        sender: "hr",
-        timestamp: new Date(),
-      },
-    ]
-  );
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: "1",
+      text: "Hello! Welcome to Cybernetic Technologies Pvt Ltd. How can I help you today?",
+      sender: "agent",
+      timestamp: new Date(),
+    },
+  ]);
   const [newMessage, setNewMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const socketRef = useRef<Socket | null>(null);
 
-  const hrResponses = [
-    "Thank you for reaching out to HR! How can we help you today?",
-    "We are happy to answer any questions about careers, company culture, or open positions.",
-    "Feel free to ask about our recruitment process or benefits.",
-    "Would you like to schedule a call with our HR team?",
-    "We value your interest in Cybernetic Technologies Pvt Ltd.",
-    "Our HR team is available to support your career growth.",
-  ];
+  // Connect to Socket.IO server
+  useEffect(() => {
+    const socket = io("https://your-backend.com"); // Change to your backend URL
+    socketRef.current = socket;
+
+    // Listen for incoming messages from the agent
+    socket.on("receive_message", (msg: { text: string; sender: string }) => {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now().toString(),
+          text: msg.text,
+          sender: msg.sender === "agent" ? "agent" : "user",
+          timestamp: new Date(),
+        },
+      ]);
+      setIsTyping(false);
+    });
+
+    // Listen for typing indicator from agent
+    socket.on("agent_typing", () => {
+      setIsTyping(true);
+    });
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -43,18 +63,10 @@ const LiveChat = () => {
     scrollToBottom();
   }, [messages]);
 
-  const generateHrResponse = () => {
-    const randomResponse =
-      hrResponses[Math.floor(Math.random() * hrResponses.length)];
-    return randomResponse;
-  };
-
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!newMessage.trim()) return;
 
-    // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
       text: newMessage,
@@ -63,21 +75,14 @@ const LiveChat = () => {
     };
 
     setMessages((prev) => [...prev, userMessage]);
+
+    // Send message to server
+    socketRef.current?.emit("send_message", {
+      text: newMessage,
+      sender: "user",
+    });
+
     setNewMessage("");
-    setIsTyping(true);
-
-    // Simulate HR response delay
-    setTimeout(() => {
-      const hrMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: generateHrResponse(),
-        sender: "hr",
-        timestamp: new Date(),
-      };
-
-      setMessages((prev) => [...prev, hrMessage]);
-      setIsTyping(false);
-    }, 1500 + Math.random() * 1000);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -108,7 +113,7 @@ const LiveChat = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-96 h-[500px] glass rounded-2xl shadow-glass z-40 flex flex-col chat-window">
+        <div className="fixed bottom-24 right-6 w-96 h-[500px] glass rounded-2xl shadow-glass z-40 flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border/20">
             <div className="flex items-center gap-3">
@@ -116,10 +121,8 @@ const LiveChat = () => {
                 <Bot className="w-5 h-5 text-primary-foreground" />
               </div>
               <div>
-                <h3 className="font-semibold">HR Support</h3>
-                <p className="text-xs text-muted-foreground">
-                  Chat with our HR team
-                </p>
+                <h3 className="font-semibold">Live Support</h3>
+                <p className="text-xs text-muted-foreground">Connected</p>
               </div>
             </div>
             <Button
@@ -139,7 +142,7 @@ const LiveChat = () => {
                 key={message.id}
                 className={`flex ${
                   message.sender === "user" ? "justify-end" : "justify-start"
-                } chat-appear`}
+                }`}
               >
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-2 ${
@@ -149,14 +152,14 @@ const LiveChat = () => {
                   }`}
                 >
                   <div className="flex items-start gap-2">
-                    {message.sender === "hr" && (
+                    {message.sender === "agent" && (
                       <Bot className="w-4 h-4 mt-1 text-primary" />
                     )}
                     {message.sender === "user" && (
                       <User className="w-4 h-4 mt-1 text-primary-foreground" />
                     )}
-                    <div className="flex-1">
-                      <p className="text-sm leading-relaxed">{message.text}</p>
+                    <div>
+                      <p className="text-sm">{message.text}</p>
                       <p
                         className={`text-xs mt-1 ${
                           message.sender === "user"
@@ -174,15 +177,11 @@ const LiveChat = () => {
 
             {/* Typing Indicator */}
             {isTyping && (
-              <div className="flex justify-start chat-appear">
+              <div className="flex justify-start">
                 <div className="glass border border-border/20 rounded-2xl px-4 py-2">
                   <div className="flex items-center gap-2">
                     <Bot className="w-4 h-4 text-primary" />
-                    <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce"></div>
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce animation-delay-200"></div>
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce animation-delay-400"></div>
-                    </div>
+                    <span className="text-sm">Agent is typing...</span>
                   </div>
                 </div>
               </div>

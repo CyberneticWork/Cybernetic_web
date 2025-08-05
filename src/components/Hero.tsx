@@ -30,11 +30,11 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up animation-delay-200">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up animation-delay-600">
             <span className="gradient-text">Empower</span> Your Business
             <br />
             With <span className="gradient-text">Cybernetic Innovation</span>
-          </h1>
+          </h2>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
