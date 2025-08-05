@@ -39,20 +39,20 @@ const caseStudies = [
       image: "/images/casestudy/1.png",
       logo: "/images/clientlog/12.jpg"
     },
-    {
-      title: "Brightwood International School",
-      subtitle: "Educational institution",
-      challenge: "Brightwood International School was struggling with a manual, paper-based HR system. Managing payroll, leave, and staff data was time-consuming and prone to errors, creating administrative bottlenecks for their growing school.",
-      solution: "We implemented a tailored HR Management System for the education sector. This all-in-one platform digitized and automated key processes, from payroll and leave requests to employee data management.",
-      results: [
-        "40% reduction in HR administrative time.",
-        "Eliminated errors in payroll and reporting through automation.",
-        "Improved data accuracy and real-time visibility for better decision-making."
-      ],
-      conclusion: "By modernizing their HR, Brightwood International School streamlined operations and created a more efficient environment for its staff.",
-      image: "/images/casestudy/.jpg",
-      logo: "/images/clientlog/.jpg"
-    },
+    // {
+    //   title: "Brightwood International School",
+    //   subtitle: "Educational institution",
+    //   challenge: "Brightwood International School was struggling with a manual, paper-based HR system. Managing payroll, leave, and staff data was time-consuming and prone to errors, creating administrative bottlenecks for their growing school.",
+    //   solution: "We implemented a tailored HR Management System for the education sector. This all-in-one platform digitized and automated key processes, from payroll and leave requests to employee data management.",
+    //   results: [
+    //     "40% reduction in HR administrative time.",
+    //     "Eliminated errors in payroll and reporting through automation.",
+    //     "Improved data accuracy and real-time visibility for better decision-making."
+    //   ],
+    //   conclusion: "By modernizing their HR, Brightwood International School streamlined operations and created a more efficient environment for its staff.",
+    //   image: "/images/casestudy/.jpg",
+    //   logo: "/images/clientlog/.jpg"
+    // },
     {
       title: "Dazzling Water Company",
       subtitle: "Bottled water producer in Labugolla",
@@ -95,20 +95,20 @@ const caseStudies = [
 image: "/images/casestudy/6.jpg",
       logo: "/images/clientlog/4.jpg"
     },
-    {
-      title: "Subasinghe Hardware",
-      subtitle: "Supplier of construction and home improvement goods",
-      challenge: "Subasinghe Hardware, a busy supplier of construction and home improvement goods, was using a manual billing and inventory system. This led to long queues, billing errors, and inaccurate stock counts, which resulted in lost sales and frustrated customers.",
-      solution: "We deployed a modern Point of Sale (POS) system to digitize and streamline their retail operations. The new system included a fast and easy-to-use checkout interface, integrated barcode scanning, and real-time inventory tracking.",
-      results: [
-        "Checkout times were reduced by 50%, eliminating long customer queues.",
-        "The automated system virtually eliminated billing errors, boosting customer trust.",
-        "Management could now see accurate stock levels instantly, preventing shortages and overstocking."
-      ],
-      conclusion: "By upgrading to our POS system, Subasinghe Hardware modernized its business, providing a better shopping experience for customers and gaining valuable control over its inventory.",
-      image: "/images/placeholder.svg",
-      logo: "/images/placeholder.svg"
-    }
+    // {
+    //   title: "Subasinghe Hardware",
+    //   subtitle: "Supplier of construction and home improvement goods",
+    //   challenge: "Subasinghe Hardware, a busy supplier of construction and home improvement goods, was using a manual billing and inventory system. This led to long queues, billing errors, and inaccurate stock counts, which resulted in lost sales and frustrated customers.",
+    //   solution: "We deployed a modern Point of Sale (POS) system to digitize and streamline their retail operations. The new system included a fast and easy-to-use checkout interface, integrated barcode scanning, and real-time inventory tracking.",
+    //   results: [
+    //     "Checkout times were reduced by 50%, eliminating long customer queues.",
+    //     "The automated system virtually eliminated billing errors, boosting customer trust.",
+    //     "Management could now see accurate stock levels instantly, preventing shortages and overstocking."
+    //   ],
+    //   conclusion: "By upgrading to our POS system, Subasinghe Hardware modernized its business, providing a better shopping experience for customers and gaining valuable control over its inventory.",
+    //   image: "/images/placeholder.svg",
+    //   logo: "/images/placeholder.svg"
+    // }
   ];
 
   const openModal = (index: number) => {

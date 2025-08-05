@@ -39,82 +39,88 @@ const AboutPage = () => {
     {
       name: "Y. IMESHA RANGANA",
       role: "Managing Director",
-      experience: "Leadership and Strategic Vision",
+      experience: "",
       image: "/images/imesha.jpg"
     },
-    {
-      name: "ESHAN DANANJAYA",
-      role: "Team Leader & Software Engineer",
-      experience: "Leadership and Full-stack Development",
-      image: "/images/eshan.jpg"
-    },
-     {
-      name: "UDARI PIYUMIKA",
-      role: "Team Leader and Software Engineer",
-      experience: "Technical Leadership and Development",
-      image: "/images/Udari - SE.jpg"
-    },
-    {
-      name: "JANITHA SANDARUWAN",
-      role: "Software Engineer",
-      experience: "Expert in Software Development",
-      image: "/images/Janitha.jpg"
-    },
+
        {
       name: "THULAKSHI RUCHINI",
       role: "Project Manager",
-      experience: "Project Management and Delivery",
+      experience: "Bachelor (Hons) in IT",
       image: "/images/Ruchini - PM.png"
     },
+     {
+      name: "SHALITHA GAMAGE",
+      role: "System & Security Engineer",
+      experience: "Bachelor (Hons) in ICT",
+      image: "/images/shalith.jpg"
+    },
+     {
+      name: "ESHAN DANANJAYA",
+      role: "Team Leader & Software Engineer",
+      experience: "BSc in Information Technology",
+      image: "/images/eshan.jpg"
+    },
+      {
+      name: "UDARI PIYUMIKA",
+      role: "Team Leader and Software Engineer",
+      experience: "BSc in Computer Science",
+      image: "/images/Udari - SE.jpg"
+    },
+   
+   
+    {
+      name: "JANITHA SANDARUWAN",
+      role: "Software Engineer",
+      experience: "BSc in Information Technology",
+      image: "/images/Janitha.jpg"
+    },
+    
     {
       name: "THUSHARA GUNAWARDHANE",
       role: "Software Engineer",
-      experience: "Full-stack Development Expertise",
+      experience: "BSc in Information Technology",
       image: "/images/thushara.jpg"
     },
-    {
-      name: "SHALITHA GAMAGE",
-      role: "System & Security Engineer",
-      experience: "Security and System Administration",
-      image: "/images/Shalitha.jpg"
-    },
+   
     {
       name: "ISURU BANDARA",
       role: "Software Engineer",
-      experience: "Full-stack Development and Testing",
+      experience: "BSc in Information Technology",
       image: "/images/Isuru-SE.png"
     },
-    {
-      name: "THILINI RAVIHARI",
-      role: "Customer Coordinator ",
-      experience: "Customer Relations and Support",
-      image: "/images/pm.jpg"
-    },
+
  
      {
       name: "BHANUKA SHAMEN",
       role: "Software Engineer",
-      experience: "Full-stack Development and Testing",
+      experience: "BSc in Computer Science",
       image: "/images/Bhanuka-SE.jpg"
     },
      {
       name: "S JUDE",
       role: "ML Engineer",
-      experience: "Machine Learning and Data Analysis",
+      experience: "BSc in Computer Science",
       image: "/images/Jude - ML Engineer.jpg"
     },
     
     {
-      name: "Pawani Madhubhashini",
+      name: "PAWANI MADHUBHASHINI",
       role: "QA Engineer",
-      experience: "Quality Assurance and Testing",
+      experience: "Bachelor of ICT",
       image: "/images/Pawani Madhubashini.jpg"
     },
       {
-      name: "Pubudu Ruwan",
+      name: "PUBUDU RUWAN",
       role: "Digital Marketing Executive",
-      experience: "Digital Marketing and SEO",
+      experience: "BBA (Hons) in Marketing",
       image: "/images/Pubudu Ruwan.jpg"
+    },
+     {
+      name: "SADISHA GAMAGE",
+      role: "Multimedia Designer",
+      experience: "",
+      image: "/images/sadisha.jpg"
     }
 
   ];
