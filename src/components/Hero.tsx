@@ -204,14 +204,11 @@ const Hero = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 glass rounded-full px-6 py-3 mb-8 animate-fade-in-up backdrop-blur-md bg-background/20 border border-primary/20">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">
-                Cybernetic Technologies Pvt Ltd – Premium IT Solutions
-              </span>
-            </div>
+       
 
             {/* Main Heading */}
+            <br />
+               <br />
             <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up animation-delay-200">
               <span className="gradient-text">Empower</span> Your Business
               <br />

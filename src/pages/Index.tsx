@@ -17,7 +17,7 @@ const Index = () => {
       <main className="overflow-hidden">
         <Hero />
         <TrustIndicators />
-          <VideoDemo />
+          {/* <VideoDemo /> */}
         <WhyChooseUs />
         <CaseStudies />
         {/* <Testimonials /> */}
