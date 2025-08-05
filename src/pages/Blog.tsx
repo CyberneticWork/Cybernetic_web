@@ -49,12 +49,37 @@ const blogPosts = [
 const Blog = () => {
   return (
     <>
+      <style>{`
+        @keyframes floatUp {
+          0% {
+            transform: translateY(100vh) translateX(-10px) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.6;
+          }
+          90% {
+            opacity: 0.6;
+          }
+          100% {
+            transform: translateY(-100px) translateX(10px) rotate(360deg);
+            opacity: 0;
+          }
+        }
+        
+        .animated-bg-overlay {
+          background: radial-gradient(circle at 20% 80%, rgba(139, 69, 255, 0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(255, 0, 107, 0.08) 0%, transparent 50%);
+        }
+      `}</style>
+      
       <Header />
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden bg-background">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/3 left-0 w-72 h-72 bg-primary opacity-5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/3 right-0 w-72 h-72 bg-secondary opacity-5 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 left-0 w-72 h-72 bg-primary opacity-10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-0 w-72 h-72 bg-secondary opacity-10 rounded-full blur-3xl"></div>
+          <div className="absolute inset-0 animated-bg-overlay"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -79,7 +104,7 @@ const Blog = () => {
             {blogPosts.map((post, idx) => (
               <article 
                 key={idx} 
-                className="glass rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+                className="glass rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group border border-primary/10 hover:border-primary/30 bg-background/50 backdrop-blur-md"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
@@ -92,8 +117,14 @@ const Blog = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {post.content}
                 </p>
+                
               </article>
             ))}
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center mt-16 animate-fade-in-up animation-delay-400">
+            
           </div>
         </div>
       </section>
