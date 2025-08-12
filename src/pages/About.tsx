@@ -1,7 +1,15 @@
-import { Users, Award, Globe, Heart, Target, Eye, Lightbulb } from 'lucide-react';
-import { useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import {
+  Users,
+  Award,
+  Globe,
+  Heart,
+  Target,
+  Eye,
+  Lightbulb,
+} from "lucide-react";
+import { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 // import LiveChat from '@/components/LiveChat';
 
 const AboutPage = () => {
@@ -12,26 +20,26 @@ const AboutPage = () => {
       icon: Users,
       number: "10+",
       label: "Expert Team Members",
-      description: "Skilled professionals across various technologies"
+      description: "Skilled professionals across various technologies",
     },
     {
       icon: Award,
       number: "50+",
       label: "Successful Projects",
-      description: "Delivered with excellence and on time"
+      description: "Delivered with excellence and on time",
     },
     {
       icon: Globe,
       number: "10+",
       label: "Countries Served",
-      description: "Global reach with local expertise"
+      description: "Global reach with local expertise",
     },
     {
       icon: Heart,
       number: "98%",
       label: "Client Satisfaction",
-      description: "Measured through continuous feedback"
-    }
+      description: "Measured through continuous feedback",
+    },
   ];
 
   // Add image path for each team member (place images in public/images/)
@@ -40,95 +48,92 @@ const AboutPage = () => {
       name: "Y. IMESHA RANGANA",
       role: "Managing Director",
       experience: "",
-      image: "/images/imesha.jpg"
+      image: "/images/imesha.jpg",
     },
 
-       {
+    {
       name: "THULAKSHI RUCHINI",
       role: "Project Manager",
       experience: "Bachelor (Hons) in IT",
-      image: "/images/Ruchini - PM.png"
+      image: "/images/Ruchini - PM.png",
     },
-     {
+    {
       name: "SHALITHA GAMAGE",
       role: "System & Security Engineer",
       experience: "Bachelor (Hons) in ICT",
-      image: "/images/shalith.jpg"
+      image: "/images/shalith.jpg",
     },
-     {
+    {
       name: "ESHAN DANANJAYA",
       role: "Team Leader & Software Engineer",
       experience: "BSc in Information Technology",
-      image: "/images/eshan.jpg"
+      image: "/images/eshan.jpg",
     },
-      {
+    {
       name: "UDARI PIYUMIKA",
       role: "Team Leader and Software Engineer",
       experience: "BSc in Computer Science",
-      image: "/images/Udari - SE.jpg"
+      image: "/images/Udari - SE.jpg",
     },
-   
-   
+
     {
       name: "JANITHA SANDARUWAN",
       role: "Software Engineer",
       experience: "BSc in Information Technology",
-      image: "/images/Janitha.jpg"
+      image: "/images/Janitha.jpg",
     },
-    
+
     {
       name: "THUSHARA GUNAWARDHANE",
       role: "Software Engineer",
       experience: "BSc in Information Technology",
-      image: "/images/thushara.jpg"
+      image: "/images/thushara.jpg",
     },
-   
+
     {
       name: "ISURU BANDARA",
       role: "Software Engineer",
       experience: "BSc in Information Technology",
-      image: "/images/Isuru-SE.png"
+      image: "/images/Isuru-SE.png",
     },
 
- 
-     {
+    {
       name: "BHANUKA SHAMEN",
       role: "Software Engineer",
       experience: "BSc in Computer Science",
-      image: "/images/Bhanuka-SE.jpg"
+      image: "/images/Bhanuka-SE.jpg",
     },
-     {
+    {
       name: "S JUDE",
       role: "ML Engineer",
       experience: "BSc in Computer Science",
-      image: "/images/Jude - ML Engineer.jpg"
+      image: "/images/Jude - ML Engineer.jpg",
     },
-    
+
     {
       name: "PAWANI MADHUBHASHINI",
       role: "QA Engineer",
       experience: "Bachelor of ICT",
-      image: "/images/Pawani Madhubashini.jpg"
+      image: "/images/Pawani Madhubashini.jpg",
     },
-      {
+    {
       name: "PUBUDU RUWAN",
       role: "Digital Marketing Executive",
       experience: "BBA (Hons) in Marketing",
-      image: "/images/Pubudu Ruwan.jpg"
+      image: "/images/LinkedIn_Profile_Photo.png",
     },
-     {
+    {
       name: "SADISHA GAMAGE",
       role: "Multimedia Designer",
       experience: "",
-      image: "/images/sadisha.jpg"
-    }
-
+      image: "/images/sadisha.jpg",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -139,18 +144,21 @@ const AboutPage = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-flex items-center gap-2 glass rounded-full px-6 py-3 mb-8">
             <Users className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">About Cybernetic Technologies Pvt Ltd</span>
+            <span className="text-sm font-medium">
+              About Cybernetic Technologies Pvt Ltd
+            </span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Leading <span className="gradient-text">Innovation</span>
             <br />
             Since <span className="gradient-text">2021</span>
           </h1>
-          
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We are committed to becoming a global leader in providing innovative and cost-effective IT solutions, 
-            driving efficiency and enhancing user experiences for sustainable growth.
+            We are committed to becoming a global leader in providing innovative
+            and cost-effective IT solutions, driving efficiency and enhancing
+            user experiences for sustainable growth.
           </p>
         </div>
       </section>
@@ -166,21 +174,26 @@ const AboutPage = () => {
 
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in 2021, Cybernetic Technologies Pvt Ltd is committed to becoming a global leader 
-                  in providing innovative and cost-effective IT solutions. We focus on driving efficiency, 
-                  enhancing user experiences, and fostering sustainable growth for our clients by delivering 
-                  tailored technology services.
+                  Founded in 2021, Cybernetic Technologies Pvt Ltd is committed
+                  to becoming a global leader in providing innovative and
+                  cost-effective IT solutions. We focus on driving efficiency,
+                  enhancing user experiences, and fostering sustainable growth
+                  for our clients by delivering tailored technology services.
                 </p>
 
                 <p>
-                  Our key strengths include expertise in integrating multi-vendor technologies, proven experience 
-                  in IT transformation, comprehensive IT lifecycle services from consulting to deployment, and 
-                  an uncompromised commitment to service quality.
+                  Our key strengths include expertise in integrating
+                  multi-vendor technologies, proven experience in IT
+                  transformation, comprehensive IT lifecycle services from
+                  consulting to deployment, and an uncompromised commitment to
+                  service quality.
                 </p>
 
                 <p>
-                  We provide end-to-end IT solutions covering data storage, virtualization, networking, and security. 
-                  Our goal is to be a trusted long-term partner, helping businesses thrive in the digital age.
+                  We provide end-to-end IT solutions covering data storage,
+                  virtualization, networking, and security. Our goal is to be a
+                  trusted long-term partner, helping businesses thrive in the
+                  digital age.
                 </p>
               </div>
             </div>
@@ -188,22 +201,20 @@ const AboutPage = () => {
             {/* Achievements */}
             <div className="grid grid-cols-2 gap-6 animate-fade-in-up animation-delay-400">
               {achievements.map((achievement, index) => (
-                <div 
+                <div
                   key={index}
                   className="glass rounded-2xl p-6 text-center card-hover"
                 >
                   <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
                     <achievement.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  
+
                   <div className="text-3xl font-bold gradient-text mb-2">
                     {achievement.number}
                   </div>
-                  
-                  <div className="font-semibold mb-2">
-                    {achievement.label}
-                  </div>
-                  
+
+                  <div className="font-semibold mb-2">{achievement.label}</div>
+
                   <div className="text-sm text-muted-foreground">
                     {achievement.description}
                   </div>
@@ -231,25 +242,33 @@ const AboutPage = () => {
               {
                 icon: Target,
                 title: "Mission",
-                description: "Our mission is to exceed clients' expectations by going beyond software to provide the best software solutions that transform data into knowledge, enabling them to solve their problems."
+                description:
+                  "Our mission is to exceed clients' expectations by going beyond software to provide the best software solutions that transform data into knowledge, enabling them to solve their problems.",
               },
               {
                 icon: Eye,
                 title: "Vision",
-                description: "Our Vision is to be a leading software solution company in the IT sector and progress in our current position in the market. We know that customer's growth is our growth, so we commit to helping our customers achieve their business goals."
+                description:
+                  "Our Vision is to be a leading software solution company in the IT sector and progress in our current position in the market. We know that customer's growth is our growth, so we commit to helping our customers achieve their business goals.",
               },
               {
                 icon: Lightbulb,
                 title: "Innovation",
-                description: "We believe in working with accuracy and the best quality. We want to be known as a reliable, innovative, and user-friendly software service provider in the IT industry."
-              }
+                description:
+                  "We believe in working with accuracy and the best quality. We want to be known as a reliable, innovative, and user-friendly software service provider in the IT industry.",
+              },
             ].map((value, index) => (
-              <div key={index} className="glass rounded-2xl p-8 text-center card-hover">
+              <div
+                key={index}
+                className="glass rounded-2xl p-8 text-center card-hover"
+              >
                 <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
@@ -264,22 +283,27 @@ const AboutPage = () => {
               Meet Our <span className="gradient-text">Team</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our team comprises highly skilled and experienced software professionals dedicated to delivering innovative and effective solutions
+              Our team comprises highly skilled and experienced software
+              professionals dedicated to delivering innovative and effective
+              solutions
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="glass rounded-2xl p-6 text-center card-hover">
+              <div
+                key={index}
+                className="glass rounded-2xl p-6 text-center card-hover"
+              >
                 <div className="relative mb-4">
                   {teamImages[member.name] ? (
-                    <img 
-                      src={teamImages[member.name]} 
+                    <img
+                      src={teamImages[member.name]}
                       alt={member.name}
                       className="w-24 h-24 rounded-full mx-auto object-cover"
                     />
                   ) : member.image ? (
-                    <img 
+                    <img
                       src={member.image}
                       alt={member.name}
                       className="w-24 h-24 rounded-full mx-auto object-cover"
@@ -290,29 +314,35 @@ const AboutPage = () => {
                     </div>
                   )}
                 </div>
-                
+
                 <h3 className="text-xl font-bold mb-2">{member.name}</h3>
                 <p className="text-primary font-semibold mb-2">{member.role}</p>
-                <p className="text-sm text-muted-foreground">{member.experience}</p>
+                <p className="text-sm text-muted-foreground">
+                  {member.experience}
+                </p>
               </div>
             ))}
           </div>
-          
+
           <div className="mt-12 glass rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-4 text-center">Our Expertise</h3>
+            <h3 className="text-2xl font-bold mb-4 text-center">
+              Our Expertise
+            </h3>
             <p className="text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto">
-              We are adept at capturing precise software requirements and translating them into robust and scalable systems. 
-              Our expertise spans the entire software development lifecycle, from initial conceptualization and design through 
-              to development, rigorous testing, and seamless deployment. Beyond implementation, we provide comprehensive 
-              ongoing technical support, including assistance with issues, timely bug fixes, and continuous system maintenance, 
-              ensuring our clients' long-term success.
+              We are adept at capturing precise software requirements and
+              translating them into robust and scalable systems. Our expertise
+              spans the entire software development lifecycle, from initial
+              conceptualization and design through to development, rigorous
+              testing, and seamless deployment. Beyond implementation, we
+              provide comprehensive ongoing technical support, including
+              assistance with issues, timely bug fixes, and continuous system
+              maintenance, ensuring our clients' long-term success.
             </p>
           </div>
         </div>
       </section>
 
       <Footer />
-     
     </div>
   );
 };
