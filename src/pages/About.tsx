@@ -58,7 +58,7 @@ const AboutPage = () => {
       image: "/images/Ruchini - PM.png",
     },
     {
-      name: "SHALITHA GAMAGE",
+      name: "SHALITHA MADHUWANTHA",
       role: "System & Security Engineer",
       experience: "Bachelor (Hons) in ICT",
       image: "/images/shalith.jpg",
