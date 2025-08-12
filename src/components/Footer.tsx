@@ -174,7 +174,7 @@ const Footer = () => {
                 Refund Policy
               </a>
             </div>
-            +
+            
           </div>
         </div>
       </div>
