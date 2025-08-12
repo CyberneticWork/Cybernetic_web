@@ -1,43 +1,50 @@
-import { ArrowRight, Trophy, CheckCircle, X, Sun, Moon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
+import { ArrowRight, Trophy, CheckCircle, X, Sun, Moon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
 const CaseStudies = () => {
-  const [selectedCaseStudy, setSelectedCaseStudy] = useState<number | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState<number | null>(
+    null
+  );
   const { theme, setTheme } = useTheme();
 
   // Complete case studies data
-const caseStudies = [
+  const caseStudies = [
     {
       title: "HiTech Group of Company",
       subtitle: "Piliyandala-based electronics manufacturer",
-      challenge: "HiTech Group of Company, a Piliyandala-based electronics manufacturer, struggled with fragmented operations. Disconnected systems for finance, production, and inventory led to inaccurate stock levels, delayed orders, and inefficient manual processes.",
-      solution: "We implemented a custom Unified ERP system. This single platform integrated all business functions—from sales and production to inventory and finance—providing a real-time, holistic view of operations.",
+      challenge:
+        "HiTech Group of Company, a Piliyandala-based electronics manufacturer, struggled with fragmented operations. Disconnected systems for finance, production, and inventory led to inaccurate stock levels, delayed orders, and inefficient manual processes.",
+      solution:
+        "We implemented a custom Unified ERP system. This single platform integrated all business functions—from sales and production to inventory and finance—providing a real-time, holistic view of operations.",
       results: [
         "95% reduction in stock discrepancies, virtually eliminating production delays.",
         "30% increase in administrative efficiency by automating manual tasks.",
-        "15% increase in profitability within the first year due to better financial visibility."
+        "15% increase in profitability within the first year due to better financial visibility.",
       ],
-      conclusion: "By unifying their systems, HiTech Group of Company transformed their business, laying a strong foundation for future growth and solidifying their market position.",
+      conclusion:
+        "By unifying their systems, HiTech Group of Company transformed their business, laying a strong foundation for future growth and solidifying their market position.",
       image: "/images/casestudy/5.jpg",
-      logo: "/images/clientlog/2.jpg"
+      logo: "/images/clientlog/2.jpg",
     },
     {
       title: "Arunalu Lanka Company",
       subtitle: "Microfinance provider",
-      challenge: "Arunalu Lanka Company, a microfinance provider, was managing its loans with a mix of spreadsheets and manual paperwork. This outdated system led to significant challenges: errors in calculations, slow loan processing times, and difficulty in tracking repayments, which ultimately impacted their financial health and customer trust.",
-      solution: "We partnered with Arunalu Lanka to implement a tailored Loan Management System. This solution digitized their entire loan lifecycle, from application to collection. It included features for automated credit scoring, real-time tracking of payments, and customizable reports to provide a clear overview of their portfolio.",
+      challenge:
+        "Arunalu Lanka Company, a microfinance provider, was managing its loans with a mix of spreadsheets and manual paperwork. This outdated system led to significant challenges: errors in calculations, slow loan processing times, and difficulty in tracking repayments, which ultimately impacted their financial health and customer trust.",
+      solution:
+        "We partnered with Arunalu Lanka to implement a tailored Loan Management System. This solution digitized their entire loan lifecycle, from application to collection. It included features for automated credit scoring, real-time tracking of payments, and customizable reports to provide a clear overview of their portfolio.",
       results: [
         "60% reduction in loan processing time.",
         "100% accuracy in financial records through automation.",
-        "25% increase in on-time collections with real-time dashboards."
+        "25% increase in on-time collections with real-time dashboards.",
       ],
-      conclusion: "By modernizing their operations, Arunalu Lanka Company was able to increase efficiency, mitigate risks, and build a stronger, more reliable service for their clients.",
+      conclusion:
+        "By modernizing their operations, Arunalu Lanka Company was able to increase efficiency, mitigate risks, and build a stronger, more reliable service for their clients.",
       image: "/images/casestudy/1.png",
-      logo: "/images/clientlog/12.jpg"
+      logo: "/images/clientlog/12.jpg",
     },
     // {
     //   title: "Brightwood International School",
@@ -56,44 +63,53 @@ const caseStudies = [
     {
       title: "Dazzling Water Company",
       subtitle: "Bottled water producer in Labugolla",
-      challenge: "Dazzling Water Company, a bottled water producer in Labugolla, struggled with disconnected processes. Manual tracking of inventory, production, and distribution led to stock shortages and inefficient deliveries.",
-      solution: "We implemented a customized ERP system that integrated all operations into a single platform. This solution automated production planning, managed real-time inventory, and optimized delivery routes.",
+      challenge:
+        "Dazzling Water Company, a bottled water producer in Labugolla, struggled with disconnected processes. Manual tracking of inventory, production, and distribution led to stock shortages and inefficient deliveries.",
+      solution:
+        "We implemented a customized ERP system that integrated all operations into a single platform. This solution automated production planning, managed real-time inventory, and optimized delivery routes.",
       results: [
         "20% increase in operational efficiency.",
         "Reduced costs by minimizing waste and optimizing logistics.",
-        "Improved decision-making with real-time data on production and sales."
+        "Improved decision-making with real-time data on production and sales.",
       ],
-      conclusion: "By embracing a unified ERP, Dazzling Water Company streamlined its business, enabling them to scale and serve customers more effectively.",
+      conclusion:
+        "By embracing a unified ERP, Dazzling Water Company streamlined its business, enabling them to scale and serve customers more effectively.",
       image: "/images/casestudy/3.jpg",
-      logo: "/images/clientlog/5.jpg"
+      logo: "/images/clientlog/5.jpg",
     },
     {
       title: "Jay Sea Food Processing",
       subtitle: "Major seafood processing company",
-      challenge: "Jay Sea Food, a major processing company, was struggling with a complex and manual HR and payroll system. Managing shift-based workers, overtime, and a large workforce with fluctuating schedules was time-consuming and prone to errors. This led to administrative delays and payroll disputes.",
-      solution: "We implemented a tailored HR and Payroll System designed for the manufacturing sector. This solution automated key functions including time & attendance tracking, payroll calculations, and leave management.",
+      challenge:
+        "Jay Sea Food, a major processing company, was struggling with a complex and manual HR and payroll system. Managing shift-based workers, overtime, and a large workforce with fluctuating schedules was time-consuming and prone to errors. This led to administrative delays and payroll disputes.",
+      solution:
+        "We implemented a tailored HR and Payroll System designed for the manufacturing sector. This solution automated key functions including time & attendance tracking, payroll calculations, and leave management.",
       results: [
         "80% reduction in time spent on monthly payroll processing.",
         "Eliminated payroll errors, leading to fewer employee disputes.",
-        "Improved operational efficiency by centralizing HR data and automating key tasks."
+        "Improved operational efficiency by centralizing HR data and automating key tasks.",
       ],
-      conclusion: "By modernizing their HR and payroll, Jay Sea Food streamlined its operations, improved employee satisfaction, and gained the efficiency needed to focus on its core business.",
+      conclusion:
+        "By modernizing their HR and payroll, Jay Sea Food streamlined its operations, improved employee satisfaction, and gained the efficiency needed to focus on its core business.",
       image: "/images/casestudy/4.jpg",
-      logo: "/images/clientlog/6.jpg"
+      logo: "/images/clientlog/6.jpg",
     },
     {
       title: "Maxcity Plywood Company",
       subtitle: "Leading plywood manufacturer",
-      challenge: "Maxcity Plywood, a leading plywood manufacturer, was hampered by fragmented systems. Manual processes for inventory, order management, and production scheduling led to stock inconsistencies, delayed orders, and a lack of real-time visibility into their supply chain.",
-      solution: "We implemented a custom ERP system tailored for the manufacturing sector. This unified platform integrated all key business functions, from raw material procurement and production to sales and inventory management. The system provided real-time tracking of materials, automated order processing, and optimized production schedules.",
+      challenge:
+        "Maxcity Plywood, a leading plywood manufacturer, was hampered by fragmented systems. Manual processes for inventory, order management, and production scheduling led to stock inconsistencies, delayed orders, and a lack of real-time visibility into their supply chain.",
+      solution:
+        "We implemented a custom ERP system tailored for the manufacturing sector. This unified platform integrated all key business functions, from raw material procurement and production to sales and inventory management. The system provided real-time tracking of materials, automated order processing, and optimized production schedules.",
       results: [
         "95% accuracy rate in inventory, virtually eliminating material shortages and production delays.",
         "Automated order and production workflows reduced administrative time by 30%.",
-        "Management gained a complete, real-time view of the entire operation."
+        "Management gained a complete, real-time view of the entire operation.",
       ],
-      conclusion: "By adopting our ERP solution, Maxcity Plywood streamlined its operations, boosted efficiency, and solidified its position as a reliable supplier in the market.",
-image: "/images/casestudy/6.jpg",
-      logo: "/images/clientlog/4.jpg"
+      conclusion:
+        "By adopting our ERP solution, Maxcity Plywood streamlined its operations, boosted efficiency, and solidified its position as a reliable supplier in the market.",
+      image: "/images/casestudy/6.jpg",
+      logo: "/images/clientlog/4.jpg",
     },
     // {
     //   title: "Subasinghe Hardware",
@@ -111,28 +127,9 @@ image: "/images/casestudy/6.jpg",
     // }
   ];
 
-  const openModal = (index: number) => {
-    setSelectedCaseStudy(index);
-    setIsModalOpen(true);
-    document.body.style.overflow = 'hidden';
+  const toggleCaseStudy = (index: number) => {
+    setSelectedCaseStudy(selectedCaseStudy === index ? null : index);
   };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    document.body.style.overflow = 'auto';
-  };
-
-  // Close modal when pressing Escape key
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        closeModal();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
 
   // Use the first case study as the featured one
   const featuredCaseStudy = {
@@ -140,18 +137,21 @@ image: "/images/casestudy/6.jpg",
     metrics: [
       { value: "95%", label: "Reduction in errors" },
       { value: "30%", label: "Efficiency gain" },
-      { value: "15%", label: "Profit increase" }
-    ]
+      { value: "15%", label: "Profit increase" },
+    ],
   };
 
   // Use the remaining case studies as additional ones
-  const additionalCaseStudies = caseStudies.slice(1).map(study => ({
+  const additionalCaseStudies = caseStudies.slice(1).map((study) => ({
     ...study,
-    category: "Success Story"
+    category: "Success Story",
   }));
 
   return (
-    <section id="case-studies" className="py-20 relative overflow-hidden bg-background text-foreground">
+    <section
+      id="case-studies"
+      className="py-20 relative overflow-hidden bg-background text-foreground"
+    >
       {/* Theme toggle button */}
       {/* <button
         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -177,13 +177,18 @@ image: "/images/casestudy/6.jpg",
             <Trophy className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium">Featured Case Study</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Success</span> Stories
+            Our{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Success
+            </span>{" "}
+            Stories
           </h2>
-          
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover how we've helped businesses transform their operations and achieve remarkable results.
+            Discover how we've helped businesses transform their operations and
+            achieve remarkable results.
           </p>
         </div>
 
@@ -192,37 +197,41 @@ image: "/images/casestudy/6.jpg",
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Image Side */}
             <div className="relative h-[300px] lg:h-full overflow-hidden group">
-              <img 
-                src={featuredCaseStudy.image} 
+              <img
+                src={featuredCaseStudy.image}
                 alt={featuredCaseStudy.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-6 lg:hidden">
-                <img 
-                  src={featuredCaseStudy.logo} 
+                <img
+                  src={featuredCaseStudy.logo}
                   alt="Client logo"
                   className="h-12 w-auto"
                 />
               </div>
             </div>
-            
+
             {/* Content Side */}
             <div className="p-8 lg:p-12 flex flex-col">
               <div className="hidden lg:block mb-6">
-                <img 
-                  src={featuredCaseStudy.logo} 
+                <img
+                  src={featuredCaseStudy.logo}
                   alt="Client logo"
                   className="h-12 w-auto"
                 />
               </div>
-              
-              <h3 className="text-2xl lg:text-3xl font-bold mb-2">{featuredCaseStudy.title}</h3>
-              <p className="text-muted-foreground mb-4">{featuredCaseStudy.subtitle}</p>
-              
+
+              <h3 className="text-2xl lg:text-3xl font-bold mb-2">
+                {featuredCaseStudy.title}
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                {featuredCaseStudy.subtitle}
+              </p>
+
               <p className="text-muted-foreground mb-6 line-clamp-3">
                 {featuredCaseStudy.challenge}
               </p>
-              
+
               {/* Metrics */}
               <div className="grid grid-cols-3 gap-4 mb-8">
                 {featuredCaseStudy.metrics.map((metric, index) => (
@@ -230,138 +239,126 @@ image: "/images/casestudy/6.jpg",
                     <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1">
                       {metric.value}
                     </div>
-                    <div className="text-sm text-muted-foreground">{metric.label}</div>
+                    <div className="text-sm text-muted-foreground">
+                      {metric.label}
+                    </div>
                   </div>
                 ))}
               </div>
-              
-              <Button 
+
+              {/* Featured Case Study “See Full” */}
+              <Button
                 className="self-start group"
-                onClick={() => openModal(0)}
+                onClick={() => toggleCaseStudy(0)}
               >
                 See Full Case Study
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
+
+              {/* Inline details dropdown for featured */}
+              {selectedCaseStudy === 0 && (
+                <div className="mt-6 bg-background p-6 rounded-lg shadow-md animate-fade-in-up">
+                  <h4 className="text-xl font-semibold mb-3 text-primary">
+                    The Challenge
+                  </h4>
+                  <p className="text-muted-foreground">
+                    {caseStudies[0].challenge}
+                  </p>
+                  <h4 className="text-xl font-semibold my-3 text-primary">
+                    The Solution
+                  </h4>
+                  <p className="text-muted-foreground">
+                    {caseStudies[0].solution}
+                  </p>
+                  <h4 className="text-xl font-semibold my-3 text-primary">
+                    The Results
+                  </h4>
+                  <ul className="space-y-2">
+                    {caseStudies[0].results.map((r, i) => (
+                      <li key={i} className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-primary mr-2" />
+                        <span>{r}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <h4 className="text-xl font-semibold mt-4 mb-2 text-primary">
+                    Conclusion
+                  </h4>
+                  <p className="text-muted-foreground">
+                    {caseStudies[0].conclusion}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
         {/* Additional Case Studies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up animation-delay-400">
-          {additionalCaseStudies.map((study, index) => (
-            <div 
-              key={index} 
-              className="bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-xl overflow-hidden group border border-muted h-[300px] relative cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30"
-              onClick={() => openModal(index + 1)}
-            >
-              <img 
-                src={study.image} 
-                alt={study.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent flex flex-col justify-end p-6">
-                <div className="text-sm text-primary mb-2">{study.category}</div>
-                <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{study.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1 line-clamp-2">{study.subtitle}</p>
-                <div className="mt-4 flex items-center text-sm text-muted-foreground group-hover:text-primary transition-colors">
-                  <span>View Case Study</span>
-                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+          {additionalCaseStudies.map((study, idx) => (
+            <div key={idx} className="relative">
+              <div
+                className="bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-xl overflow-hidden group border border-muted h-[300px] relative cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30"
+                onClick={() => toggleCaseStudy(idx + 1)}
+              >
+                <img
+                  src={study.image}
+                  alt={study.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent flex flex-col justify-end p-6">
+                  <div className="text-sm text-primary mb-2">
+                    {study.category}
+                  </div>
+                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                    {study.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                    {study.subtitle}
+                  </p>
+                  <div className="mt-4 flex items-center text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                    <span>View Case Study</span>
+                    <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </div>
                 </div>
               </div>
+
+              {/* Inline details dropdown */}
+              {selectedCaseStudy === idx + 1 && (
+                <div className="mt-4 bg-background p-4 rounded shadow-inner">
+                  <h4 className="text-lg font-semibold text-primary mb-2">
+                    The Challenge
+                  </h4>
+                  <p className="text-muted-foreground mb-3">
+                    {caseStudies[idx + 1].challenge}
+                  </p>
+                  <h4 className="text-lg font-semibold text-primary mb-2">
+                    The Solution
+                  </h4>
+                  <p className="text-muted-foreground mb-3">
+                    {caseStudies[idx + 1].solution}
+                  </p>
+                  <h4 className="text-lg font-semibold text-primary mb-2">
+                    The Results
+                  </h4>
+                  <ul className="list-disc list-inside mb-3">
+                    {caseStudies[idx + 1].results.map((r, i) => (
+                      <li key={i} className="text-muted-foreground">
+                        {r}
+                      </li>
+                    ))}
+                  </ul>
+                  <h4 className="text-lg font-semibold text-primary mb-2">
+                    Conclusion
+                  </h4>
+                  <p className="text-muted-foreground">
+                    {caseStudies[idx + 1].conclusion}
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>
-
-        {/* Modal Implementation */}
-        {isModalOpen && selectedCaseStudy !== null && (
-          <div className="fixed inset-0 z-50 overflow-y-auto">
-            <div className="flex items-center justify-center min-h-screen p-4">
-              {/* Background overlay */}
-              <div 
-                className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity" 
-                onClick={closeModal}
-              ></div>
-
-              {/* Modal container */}
-              <div 
-                className="relative w-full max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-xl transform transition-all bg-background border border-muted"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Close button */}
-                <button
-                  onClick={closeModal}
-                  className="absolute top-4 right-4 z-50 rounded-full p-2 bg-background/90 hover:bg-background transition-colors shadow-lg border border-muted"
-                >
-                  <X className="h-5 w-5" />
-                  <span className="sr-only">Close</span>
-                </button>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Image side */}
-                  <div className="relative h-[400px] lg:h-[550px] overflow-hidden">
-                    <img
-                      src={caseStudies[selectedCaseStudy].image}
-                      alt={caseStudies[selectedCaseStudy].title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-6">
-                      <img
-                        src={caseStudies[selectedCaseStudy].logo}
-                        alt="Client logo"
-                        className="h-16 w-auto max-w-[200px]"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Content side */}
-                  <div className="p-8 lg:p-10 h-[400px] lg:h-[550px] overflow-y-auto">
-                    <h3 className="text-3xl lg:text-4xl font-bold mb-2">
-                      {caseStudies[selectedCaseStudy].title}
-                    </h3>
-                    <p className="text-lg text-muted-foreground mb-6">
-                      {caseStudies[selectedCaseStudy].subtitle}
-                    </p>
-
-                    <div className="space-y-6">
-                      <div>
-                        <h4 className="text-xl font-semibold mb-3 text-primary">The Challenge</h4>
-                        <p className="text-muted-foreground">
-                          {caseStudies[selectedCaseStudy].challenge}
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4 className="text-xl font-semibold mb-3 text-primary">The Solution</h4>
-                        <p className="text-muted-foreground">
-                          {caseStudies[selectedCaseStudy].solution}
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4 className="text-xl font-semibold mb-3 text-primary">The Results</h4>
-                        <ul className="space-y-3">
-                          {caseStudies[selectedCaseStudy].results.map((result, index) => (
-                            <li key={index} className="flex items-start">
-                              <CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
-                              <span className="text-muted-foreground">{result}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="bg-primary/10 p-5 rounded-lg">
-                        <h4 className="text-xl font-semibold mb-2 text-primary">Conclusion</h4>
-                        <p className="text-muted-foreground">
-                          {caseStudies[selectedCaseStudy].conclusion}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
