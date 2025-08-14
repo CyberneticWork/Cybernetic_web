@@ -86,7 +86,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://www.instagram.com/cybernetics_software_solution/"
+                href="https://www.instagram.com/cybernetictechnologiespvtltd/"
                 className="w-10 h-10 glass rounded-xl flex items-center justify-center text-muted-foreground hover:text-pink-500 hover:bg-pink-500/10 transition-all card-hover"
                 aria-label="Instagram"
               >
@@ -103,9 +103,9 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://x.com/a_cybernetics"
+                href="https://x.com/cy_tech_pvt_ltd"
                 className="w-10 h-10 glass rounded-xl flex items-center justify-center text-muted-foreground hover:text-blue-400 hover:bg-blue-400/10 transition-all card-hover"
-                aria-label="Twitter"
+                aria-label="threads"
               >
                 <svg
                   className="w-5 h-5"
@@ -174,7 +174,6 @@ const Footer = () => {
                 Refund Policy
               </a>
             </div>
-            
           </div>
         </div>
       </div>
