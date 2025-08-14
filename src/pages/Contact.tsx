@@ -42,7 +42,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   setIsSubmitting(true);
 
   try {
-    const response = await fetch('http://localhost:3001/api/send-email', {
+    const response = await fetch('https://api.cybernetic.lk/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
