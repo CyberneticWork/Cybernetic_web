@@ -12,28 +12,17 @@ interface Message {
 
 const LiveChat = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>(
-    [
-      {
-        id: "1",
-        text: "Hello! Welcome to Cybernetic Technologies Pvt Ltd. You are now chatting with HR. How can we assist you?",
-        sender: "hr",
-        timestamp: new Date(),
-      },
-    ]
-  );
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: "1",
+      text: "Hello! Welcome to Cybernetic Technologies Pvt Ltd. You are now chatting with HR. How can we assist you?",
+      sender: "hr",
+      timestamp: new Date(),
+    },
+  ]);
   const [newMessage, setNewMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const hrResponses = [
-    "Thank you for reaching out to HR! How can we help you today?",
-    "We are happy to answer any questions about careers, company culture, or open positions.",
-    "Feel free to ask about our recruitment process or benefits.",
-    "Would you like to schedule a call with our HR team?",
-    "We value your interest in Cybernetic Technologies Pvt Ltd.",
-    "Our HR team is available to support your career growth.",
-  ];
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -43,15 +32,8 @@ const LiveChat = () => {
     scrollToBottom();
   }, [messages]);
 
-  const generateHrResponse = () => {
-    const randomResponse =
-      hrResponses[Math.floor(Math.random() * hrResponses.length)];
-    return randomResponse;
-  };
-
-  const handleSendMessage = (e: React.FormEvent) => {
+  const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!newMessage.trim()) return;
 
     // Add user message
@@ -61,23 +43,39 @@ const LiveChat = () => {
       sender: "user",
       timestamp: new Date(),
     };
-
     setMessages((prev) => [...prev, userMessage]);
     setNewMessage("");
     setIsTyping(true);
 
-    // Simulate HR response delay
-    setTimeout(() => {
+    try {
+      // Call backend multi-agent endpoint
+      const res = await fetch("http://localhost:8000/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: newMessage }),
+      });
+
+      const data = await res.json();
       const hrMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: generateHrResponse(),
+        text: data.response, // Multi-agent response
         sender: "hr",
         timestamp: new Date(),
       };
 
       setMessages((prev) => [...prev, hrMessage]);
+    } catch (error) {
+      console.error(error);
+      const hrMessage: Message = {
+        id: (Date.now() + 2).toString(),
+        text: "Sorry, I'm having trouble responding. Please try again later.",
+        sender: "hr",
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, hrMessage]);
+    } finally {
       setIsTyping(false);
-    }, 1500 + Math.random() * 1000);
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -108,7 +106,7 @@ const LiveChat = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-96 h-[500px] glass rounded-2xl shadow-glass z-40 flex flex-col chat-window">
+        <div className="fixed bottom-24 right-6 w-96 h-[430px] glass rounded-2xl shadow-glass z-40 flex flex-col chat-window">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border/20">
             <div className="flex items-center gap-3">
@@ -122,6 +120,7 @@ const LiveChat = () => {
                 </p>
               </div>
             </div>
+
             <Button
               variant="ghost"
               size="icon"
