@@ -101,7 +101,7 @@ const ChatDashboard = () => {
           </div>
           <div>
             <h3 className="font-semibold text-white">HR Support</h3>
-            <p className="text-xs text-muted-foreground text-black">
+            <p className="text-xs text-muted-foreground text-white/80">
               Chat with our HR team
             </p>
           </div>
