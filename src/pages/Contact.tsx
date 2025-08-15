@@ -1,89 +1,96 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, Clock, Globe } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  CheckCircle,
+  Clock,
+  Globe,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 // import LiveChat from '@/components/LiveChat';
-import Map from '@/components/Map';
+import Map from "@/components/Map";
+import { useNavigate } from "react-router-dom";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    service: '',
-    budget: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    service: "",
+    budget: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  
-  if (!formData.name || !formData.email || !formData.message) {
-    toast({
-      title: "Missing Information",
-      description: "Please fill in all required fields.",
-      variant: "destructive"
-    });
-    return;
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  setIsSubmitting(true);
-
-  try {
-    const response = await fetch('https://api.cybernetic.lk/api/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
+    if (!formData.name || !formData.email || !formData.message) {
       toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
       });
-      
-      setFormData({ 
-        name: '', 
-        email: '', 
-        company: '', 
-        phone: '', 
-        service: '', 
-        budget: '', 
-        message: '' 
-      });
-    } else {
-      toast({
-        title: "Failed to Send Message",
-        description: data.message || "Please try again later.",
-        variant: "destructive"
-      });
+      return;
     }
-  } catch (error) {
-    toast({
-      title: "Error",
-      description: "An error occurred while sending your message.",
-      variant: "destructive"
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.cybernetic.lk/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Redirect to thank you page
+        navigate("/thank-you", {
+          state: {
+            name: formData.name,
+            email: formData.email,
+          },
+        });
+      } else {
+        toast({
+          title: "Failed to Send Message",
+          description: data.message || "Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "An error occurred while sending your message.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const contactInfo = [
     {
@@ -91,29 +98,29 @@ const handleSubmit = async (e: React.FormEvent) => {
       title: "Email Us",
       value: "info@cybernetic.lk",
       description: "Send us an email anytime",
-      link: "mailto:info@cybernetic.lk"
+      link: "mailto:info@cybernetic.lk",
     },
     {
       icon: Phone,
       title: "Call Us",
       value: "+94 70 250 5007",
       description: "Mon-Fri from 8am to 5pm",
-      link: "tel:+94702505007"
+      link: "tel:+94702505007",
     },
     {
       icon: MapPin,
       title: "Visit Us",
       value: "No 1180, Rajamalwatta road, Battaramulla",
       description: "Our headquarters location",
-      link: "https://maps.google.com/?q=No+1180,+Rajamalwatta+road,+Battaramulla+10300"
+      link: "https://maps.google.com/?q=No+1180,+Rajamalwatta+road,+Battaramulla+10300",
     },
     {
       icon: Globe,
       title: "Website",
       value: "www.cybernetic.com",
       description: "Visit our website",
-      link: "https://www.cybernetic.com"
-    }
+      link: "https://www.cybernetic.com",
+    },
   ];
 
   const offices = [
@@ -121,14 +128,14 @@ const handleSubmit = async (e: React.FormEvent) => {
       city: "Battaramulla",
       address: "No 1180, Rajamalwatta road, Battaramulla",
       phone: "+94 70 250 5007",
-      timezone: "GMT+5:30"
-    }
+      timezone: "GMT+5:30",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -141,14 +148,15 @@ const handleSubmit = async (e: React.FormEvent) => {
             <Mail className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium">Get In Touch</span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Let's Start Your <span className="gradient-text">Project</span>
           </h1>
-          
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to transform your business with innovative technology solutions? 
-            Get in touch with our experts today for a free consultation.
+            Ready to transform your business with innovative technology
+            solutions? Get in touch with our experts today for a free
+            consultation.
           </p>
         </div>
       </section>
@@ -171,10 +179,16 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4">
                       <info.icon className="w-6 h-6 text-primary-foreground" />
                     </div>
-                    
-                    <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">{info.title}</h3>
-                    <p className="font-semibold text-primary mb-1">{info.value}</p>
-                    <p className="text-sm text-muted-foreground">{info.description}</p>
+
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">
+                      {info.title}
+                    </h3>
+                    <p className="font-semibold text-primary mb-1">
+                      {info.value}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {info.description}
+                    </p>
                   </a>
                 ))}
               </div>
@@ -210,7 +224,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     "24/7 expert support",
                     "Transparent pricing",
                     "Guaranteed project delivery",
-                    "Money-back guarantee"
+                    "Money-back guarantee",
                   ].map((benefit, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-primary" />
@@ -225,7 +239,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div className="lg:col-span-2">
               <div className="glass rounded-2xl p-8 animate-fade-in-up animation-delay-200">
                 <h2 className="text-2xl font-bold mb-6">Send us a message</h2>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -242,7 +256,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                         required
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium mb-2">
                         Email Address *
@@ -273,7 +287,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                         className="glass border-border/50 focus:border-primary"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium mb-2">
                         Phone Number
@@ -360,19 +374,25 @@ const handleSubmit = async (e: React.FormEvent) => {
             {/* Office Locations */}
             <div className="space-y-6">
               <h3 className="text-2xl font-bold mb-6">Our Office</h3>
-              
+
               {offices.map((office, index) => (
                 <div key={index} className="glass rounded-xl p-6 card-hover">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
                       <Globe className="w-5 h-5 text-primary-foreground" />
                     </div>
-                    
+
                     <div className="flex-1">
                       <h4 className="font-bold text-lg mb-1">{office.city}</h4>
-                      <p className="text-muted-foreground mb-2">{office.address}</p>
-                      <p className="text-sm text-primary font-semibold mb-1">{office.phone}</p>
-                      <p className="text-xs text-muted-foreground">Timezone: {office.timezone}</p>
+                      <p className="text-muted-foreground mb-2">
+                        {office.address}
+                      </p>
+                      <p className="text-sm text-primary font-semibold mb-1">
+                        {office.phone}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        Timezone: {office.timezone}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -383,7 +403,6 @@ const handleSubmit = async (e: React.FormEvent) => {
       </section>
 
       <Footer />
-   
     </div>
   );
 };
